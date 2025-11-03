@@ -41,25 +41,16 @@ const Hero = ({ imageUrl }) => {
       <div className="container position-relative" style={{ zIndex: 10 }}>
         <h1 className="display-3 fw-bold mb-3 text-shadow-lg">{t('hero.title')}</h1>
         <p className="lead fs-4 text-shadow-lg">{t('hero.subtitle')}</p>
-<div
-  style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ffffff',
-    borderRadius: '15px'
-  }}
->
   <PopupButton
     url={calendlyUrl}
     rootElement={document.getElementById("root")}
     text={t("navbar.reserve") || "Reserva"}
     className="fw-bold px-4 py-2"
     styles={{
-    borderRadius: "15px", // Esto solo funciona en el botón de trigger, no dentro del iframe
+    borderRadius: "15px",
+    backgroundColor: "#F5F5F5" // Esto solo funciona en el botón de trigger, no dentro del iframe
   }}
   />
-</div>
 
       </div>
     </div>

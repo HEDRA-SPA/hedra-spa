@@ -12,7 +12,7 @@ const AboutSection = () => {
     <>
     <section 
         id="nosotros" 
-        className="py-5 my-5"
+        className="py-5"
         // ⭐ CAMBIO CLAVE AQUÍ: Aplicando el fondo crema profundo
         style={{ backgroundColor: '#e9e7d8ff' }} 
     > 
