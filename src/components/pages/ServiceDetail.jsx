@@ -1,5 +1,3 @@
-// src/components/ServiceDetail.jsx
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -8,87 +6,78 @@ import './ServiceDetail.css';
 import MainNavbar from '../MainBar';
 import Footer from '../Footer';
 
-// Mapeo de IDs de la URL a las claves de traducción
+// Solo Body Treatments y Facial Treatments
 const serviceKeyMap = {
-  1: 'therapeutic',
-  2: 'signature',
-  3: 'facial',
-  4: 'wellness'
+  1: 'therapeutic',
+  3: 'facial'
 };
 
-// Mapeo de claves a URLs de imágenes (Hardcoded, asumo que esto está bien)
+// Imágenes asociadas
 const serviceImageMap = {
-  therapeutic: 'https://cdn.pixabay.com/photo/2014/03/11/22/56/new-year-285587_1280.jpg',
-  signature: 'https://cdn.pixabay.com/photo/2023/09/01/20/06/spa-8227623_1280.jpg',
-  facial: 'https://cdn.pixabay.com/photo/2019/09/16/17/18/spa-4481538_1280.jpg',
-  wellness: 'https://cdn.pixabay.com/photo/2018/02/27/03/36/stones-3184610_1280.jpg'
+  therapeutic: 'https://cdn.pixabay.com/photo/2014/03/11/22/56/new-year-285587_1280.jpg',
+  facial: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170'
 };
 
 function ServiceDetail() {
-  const { id } = useParams();
-  const { t } = useTranslation();
-  const serviceKey = serviceKeyMap[id];
+  const { id } = useParams();
+  const { t } = useTranslation();
+  const serviceKey = serviceKeyMap[id];
 
-  if (!serviceKey) {
-    return (
-      <div className="service-detail-page"> {/* Usamos la clase de página aquí también para consistencia */}
-        <div className="service-detail container">
-          <h2>{t('services.notFound')}</h2>
-          <Link to="/" className="back-btn">{t('common.backToHome')}</Link>
-        </div>
-      </div>
-    );
-  }
+  if (!serviceKey) {
+    return (
+      <div className="service-detail-page">
+        <div className="service-detail container">
+          <h2>{t('services.notFound')}</h2>
+          <Link to="/" className="back-btn">{t('common.backToHome')}</Link>
+        </div>
+      </div>
+    );
+  }
 
-  // Se construye el objeto del servicio usando la clave de i18next
-  const service = {
-    key: serviceKey,
-    title: t(`services.items.${serviceKey}.title`),
-    description: t(`services.items.${serviceKey}.description`),
-    imageUrl: serviceImageMap[serviceKey],
-    // Esto asume que los subServicios están en el archivo JSON/i18next y son un array de objetos
-    subServices: t(`services.items.${serviceKey}.subServices`, { returnObjects: true })
-  };
+  const service = {
+    key: serviceKey,
+    title: t(`services.items.${serviceKey}.title`),
+    description: t(`services.items.${serviceKey}.description`),
+    imageUrl: serviceImageMap[serviceKey],
+    subServices: t(`services.items.${serviceKey}.subServices`, { returnObjects: true })
+  };
 
-  return (
-    // ⭐ CAMBIO CLAVE: Envolvemos todo en un <div> con la clase .service-detail-page
-    <div className="service-detail-page">
-      <MainNavbar/>
+  return (
+    <div className="service-detail-page">
+      <MainNavbar/>
 
-      <div className="service-detail container">
-        <div className="detail-header">
-          <img src={service.imageUrl} alt={service.title} className="detail-image" />
-          <div className="detail-content">
-            <h1>{service.title}</h1>
-            <p className="main-description">{service.description}</p>
-            <Link to="/" className="back-btn">← {t('services.backToServices')}</Link> 
-          </div>
-        </div>
-        
-        {/* SECCIÓN DE SUB-SERVICIOS */}
-        <h2 className="subservices-heading">{t('services.availableTreatments')}</h2>
-        
-        {/* Manejo de caso si subServices no es un array */}
-        {Array.isArray(service.subServices) && service.subServices.length > 0 ? (
-          <div className="subservices-grid">
-            {service.subServices.map((subService, index) => (
-              <div key={index} className="subservice-card">
-                <h3>{subService.title}</h3>
-                <p className="subservice-duration">{subService.duration}</p>
-                <p className="subservice-price">{subService.price}</p>
-                <p className="subservice-description">{subService.description}</p>
-                <button className="book-btn">{t('services.book')}</button>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="no-subservices">{t('services.noTreatmentsAvailable')}</p>
-        )}
-        
-      </div>
-      <Footer />
-    </div>
-  );
+      <div className="service-detail container">
+        <div className="detail-header">
+          <img src={service.imageUrl} alt={service.title} className="detail-image" />
+          <div className="detail-content">
+            <h1>{service.title}</h1>
+            <p className="main-description">{service.description}</p>
+            <Link to="/" className="back-btn">← {t('services.backToServices')}</Link> 
+          </div>
+        </div>
+
+        <h2 className="subservices-heading">{t('services.availableTreatments')}</h2>
+
+        {Array.isArray(service.subServices) && service.subServices.length > 0 ? (
+          <div className="subservices-grid">
+            {service.subServices.map((subService, index) => (
+              <div key={index} className="subservice-card">
+                <h3>{subService.title}</h3>
+                <p className="subservice-duration">{subService.duration}</p>
+                <p className="subservice-price">{subService.price}</p>
+                <p className="subservice-description">{subService.description}</p>
+                <button className="book-btn">{t('services.book')}</button>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="no-subservices">{t('services.noTreatmentsAvailable')}</p>
+        )}
+      </div>
+
+      <Footer />
+    </div>
+  );
 }
 
 export default ServiceDetail;

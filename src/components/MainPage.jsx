@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import ContactForm from './ContactForm';
 
-const HERO_BACKGROUND_URL = 'https://cdn.pixabay.com/photo/2024/04/12/18/51/model-8692431_1280.jpg';
+const HERO_BACKGROUND_URL = 'https://images.pexels.com/photos/6187645/pexels-photo-6187645.jpeg';
 
 function MainPage() {
   const { t, i18n } = useTranslation();
