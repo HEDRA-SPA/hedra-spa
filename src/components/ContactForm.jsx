@@ -126,7 +126,7 @@ const INPUT_BG_COLOR = '#f4f3ebff';
         className="py-5" 
         style={{ 
             backgroundColor: '#f7f6ef', // Fondo cremoso
-            fontFamily: 'Roboto, sans-serif' // Añadir fuente
+            fontFamily: 'Playfair Display, serif ' // Añadir fuente
         }} 
       > 
         <div className="container">

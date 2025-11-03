@@ -79,7 +79,7 @@ const MinimalistCarousel = ({ heroContent }) => {
             className="position-relative overflow-hidden" 
             style={{ 
                 height: '500px', // Altura fija
-                fontFamily: 'Roboto, sans-serif',
+                fontFamily: 'Monserrat, sans-serif',
             }}
         >
             {/* Contenedor de las diapositivas */}

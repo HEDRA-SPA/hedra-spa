@@ -22,7 +22,7 @@ const MainNavbar = ({ logoSrc, logoAlt }) => {
 
   return (
 <nav 
-  className="navbar navbar-expand-lg navbar-light py-3 shadow-sm" 
+  className="navbar navbar-expand-lg navbar-light py-1 shadow-sm" 
   style={{ backgroundColor: '#f7f6ef' }} // <-- ¡ESTE ES EL CAMBIO!
 >
       <div className="container">

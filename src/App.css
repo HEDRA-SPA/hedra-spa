@@ -1,5 +1,13 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    overflow-y: auto;
-    background-color: #f7f6ef;
+  font-family: 'Playfair Display', serif;
+  overflow-y: auto;
+  background-color: #f7f6ef;
+}
+/* Sobrescribe el borde del botón de Calendly */
+button.calendly-button, 
+.calendly-badge-content, 
+.calendly-inline-widget button {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
