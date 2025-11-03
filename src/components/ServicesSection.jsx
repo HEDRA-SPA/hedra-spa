@@ -6,7 +6,7 @@ import MinimalistCarousel from './MinimalistCarousel';
 
 const servicesData = [
   {
-    id: 1,
+    id: 1, 
     key: 'therapeutic', // Body Treatments
     imageUrl: 'https://cdn.pixabay.com/photo/2014/03/11/22/56/new-year-285587_1280.jpg',
   },
