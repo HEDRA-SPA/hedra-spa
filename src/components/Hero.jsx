@@ -19,9 +19,7 @@ const Hero = ({ imageUrl }) => {
     color: 'white', // Texto blanco por defecto
     textAlign: 'center',
   };
-  const calendlyUrl = i18n.language.startsWith('es')
-    ? 'https://calendly.com/hedraspa/30min'      // Español
-    : 'https://calendly.com/hedraspa-en/30min'; // Inglés
+  const calendlyUrl = 'https://calendly.com/hedraspa/30min'
   return (
     <div style={heroStyle}>
       <div 
