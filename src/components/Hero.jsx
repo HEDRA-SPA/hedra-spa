@@ -7,9 +7,8 @@ import { PopupButton } from 'react-calendly';
 const Hero = ({ imageUrl }) => {
   const { t, i18n } = useTranslation();
   
-  // Altura mínima para asegurar que el contenido se vea bien en la página
   const heroStyle = {
-    backgroundImage: `url(${imageUrl})`,
+    backgroundImage: `url(https://images.pexels.com/photos/6187645/pexels-photo-6187645.jpeg)`,
     backgroundSize: 'cover', // Asegura que la imagen cubra todo el contenedor
     backgroundPosition: 'center', // Centra la imagen
     minHeight: '100vh', // Altura mínima del 60% de la ventana (ajusta a tu gusto)
@@ -25,7 +24,6 @@ const Hero = ({ imageUrl }) => {
     : 'https://calendly.com/hedraspa-en/30min'; // Inglés
   return (
     <div style={heroStyle}>
-      {/* Overlay oscuro para mejorar la legibilidad del texto blanco */}
       <div 
         style={{
           position: 'absolute',
@@ -47,10 +45,13 @@ const Hero = ({ imageUrl }) => {
     text={t("navbar.reserve") || "Reserva"}
     className="fw-bold px-4 py-2"
     styles={{
-    borderRadius: "15px",
-    backgroundColor: "#F5F5F5" // Esto solo funciona en el botón de trigger, no dentro del iframe
-  }}
-  />
+        borderRadius: "15px",
+        backgroundColor: "#F5F5F5",
+        // 👇 Añade estas líneas
+        outline: "none", // Esto elimina el borde de enfoque
+        boxShadow: "none" // Opcional: Para asegurar que no haya sombras raras
+    }}
+/>
 
       </div>
     </div>
@@ -58,3 +59,10 @@ const Hero = ({ imageUrl }) => {
 };
 
 export default Hero;
+
+/*
+Opcion 1:
+ backgroundImage: `url(https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg)`,
+  backgroundImage: `url(https://images.pexels.com/photos/6629557/pexels-photo-6629557.jpeg)`,
+     backgroundImage: `url(https://images.pexels.com/photos/3738349/pexels-photo-3738349.jpeg)`,
+*/

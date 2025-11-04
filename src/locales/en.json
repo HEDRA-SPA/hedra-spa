@@ -5,11 +5,12 @@
     "services": "SERVICES",
     "contact": "CONTACT",
     "language": "EN_US",
-    "reserve": "RESERVE"
+    "reserve": "RESERVE",
+    "reserve_a_now": "BOOK A SERVICE"
   },
   "hero": {
     "title": "Welcome to HEDRA SPA",
-    "subtitle": "The SPA experience"
+    "subtitle": "Discover your deepest calm"
   },
   "about": {
     "title": "OUR SPA",
@@ -139,16 +140,16 @@
   },
   "features": {
     "technology": {
-      "title": "Technology",
-      "text": "Our company has state-of-the-art equipment and the most innovative studies for orthodontics and maxillofacial surgeries."
+      "title": "Body Rituals",
+      "text": "Every session is more than a massage; it's a ritual designed to release deep tension. Choose exclusive relaxation therapies, guided by expert hands, for total well-being."
     },
     "locations": {
-      "title": "Locations",
-      "text": "We currently have a presence in two locations in Tijuana, as well as branches in Rosarito, Tecate, and Ensenada."
+      "title": "The Art of Skin",
+      "text": "Our facial rituals go beyond the superficial. We achieve deep hydration and a flawless texture that feels as vital as it looks."
     },
     "medical": {
-      "title": "Medical Care",
-      "text": "Our doctors provide personalized care, building trust and ensuring quality service."
+      "title": "Flow in Calmness",
+      "text": "Immerse yourself in the warm embrace of our jacuzzi. Designed to relax your muscles and clear your mind, marking the perfect start or close to your experience."
     }
   },
   "contact": {
@@ -162,7 +163,7 @@
   },
   "footer": {
     "rights": "All rights reserved",
-    "description": "The spa experience",
+    "description": "Discover your deepest calm",
     "navigation": "Navigation",
     "services": "Services",
     "contact": "Contact Us",

@@ -1,7 +1,7 @@
 // src/components/MainNavbar.jsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import logoImage from '../assets/spa-logo.png';
+import logoImage from '../assets/spa-logo-bg.png';
 import LanguageSelector from './LanguageSelector';
 import { PopupButton } from 'react-calendly';
 
@@ -23,60 +23,65 @@ const MainNavbar = ({ logoSrc, logoAlt }) => {
   return (
 <nav 
   className="navbar navbar-expand-lg navbar-light py-1 shadow-sm" 
-  style={{ backgroundColor: '#f7f6ef' }} // <-- ¡ESTE ES EL CAMBIO!
+  style={{ backgroundColor: '#1c3b14' }}
 >
-      <div className="container">
-        <a className="navbar-brand" href="#">
-          <img src={logoImage} alt={logoAlt || 'SPA'} height="70" /> 
-        </a>
+  <div className="container">
+    <a className="navbar-brand" href="#">
+      <img src={logoImage} alt={logoAlt || 'SPA'} height="70" /> 
+    </a>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+    <button
+      className="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span className="navbar-toggler-icon"></span>
+    </button>
 
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav align-items-center">
-            {navItems.map((item) => (
-              <li className="nav-item mx-2" key={item.key}>
-                <a
-                  className={`nav-link text-uppercase ${
-                    item.key === 'home'
-                      ? 'btn btn-info text-white px-3'
-                      : 'text-dark'
-                  }`}
-                  href={item.path}
-                  style={{ fontWeight: item.key === 'home' ? 'normal' : '500' }}
-                >
-                  {t(`navbar.${item.key}`)}
-                </a>
-              </li>
-            ))}
+    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul className="navbar-nav align-items-center">
+        {navItems.map((item) => (
+          <li className="nav-item mx-2" key={item.key}>
+            <a
+              className={`nav-link text-uppercase`} // Quitamos text-dark
+              href={item.path}
+              style={{ 
+                color: 'white',            // texto blanco
+                fontWeight: item.key === 'home' ? 'normal' : '500'
+              }}
+            >
+              {t(`navbar.${item.key}`)}
+            </a>
+          </li>
+        ))}
 
-            {/* 🔹 Botón de Reserva dinámico */}
-            <li className="nav-item mx-2">
-              <PopupButton
-                url={calendlyUrl}
-                rootElement={document.getElementById("root")}
-                text={t("navbar.reserve") || "Reserva"}
-                className="btn px-2 fw-bold"
-              />
-            </li>
+        {/* 
+        <li className="nav-item mx-2">
+         <PopupButton
+    url={calendlyUrl}
+    rootElement={document.getElementById("root")}
+    text={t("navbar.reserve") || "Reserva"}
+    className="fw-bold px-4 py-2"
+    styles={{
+    borderRadius: "15px",
+    backgroundColor: "#F5F5F5",
+    color: "#1c3b14"// Esto solo funciona en el botón de trigger, no dentro del iframe
+  }}
+  />
+        </li>
+🔹 Botón de Reserva dinámico */}
+        <li className="nav-item ms-3">
+          <LanguageSelector />
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            <li className="nav-item ms-3">
-              <LanguageSelector />
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
   );
 };
 

@@ -17,11 +17,14 @@ function LanguageSelector() {
   return (
     <div className="dropdown">
       <button 
-        className="btn btn-link dropdown-toggle text-dark" 
+        className="btn btn-link dropdown-toggle" 
         type="button" 
         data-bs-toggle="dropdown" 
         aria-expanded="false"
-        style={{ textDecoration: 'none' }}
+        style={{ 
+          textDecoration: 'none', 
+          color: 'white'   // texto en blanco
+        }}
       >
         <img
           src={i18n.language === 'es' ? mxFlag : enFlag}
@@ -30,12 +33,23 @@ function LanguageSelector() {
         />
         {i18n.language.toUpperCase()}
       </button>
-      <ul className="dropdown-menu">
+
+      <ul 
+        className="dropdown-menu"
+        style={{ 
+          backgroundColor: '#1c3b14',  // fondo oscuro
+          border: 'none',               // quitar borde claro
+        }}
+      >
         {languages.map((lang) => (
           <li key={lang.code}>
             <button
-              className={`dropdown-item ${i18n.language === lang.code ? 'active' : ''}`}
+              className="dropdown-item"
               onClick={() => changeLanguage(lang.code)}
+              style={{ 
+                color: 'white',             // texto blanco
+                backgroundColor: 'transparent' 
+              }}
             >
               <img
                 src={lang.flag}

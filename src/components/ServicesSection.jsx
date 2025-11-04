@@ -50,14 +50,7 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="view-all-container">
-          <button
-            className="view-all-btn"
-            onClick={() => console.log('View all services')}
-          >
-            {t('services.viewAll')}
-          </button>
-        </div>
+        
       </div>
     </section>
   );

@@ -5,11 +5,12 @@
     "services": "SERVICIOS",
     "contact": "CONTACTO",
     "language": "ES_MX",
-    "reserve": "RESERVAR"
+    "reserve": "RESERVAR",
+    "reserve_a_now": "RESERVAR UN SERVICIO"
   },
   "hero": {
     "title": "Bienvenido a HEDRA SPA",
-    "subtitle": "La experiencia SPA"
+    "subtitle": "Descubre tu calma más profunda"
   },
   "about": {
     "title": "NUESTRO SPA",
@@ -139,16 +140,16 @@
   },
   "features": {
     "technology": {
-      "title": "Tecnología",
-      "text": "Nuestra empresa cuenta con equipo de vanguardia y los estudios más novedosos para ortodoncia y cirugías maxilofaciales."
+      "title": "Rituales del Cuerpo",
+      "text": "Cada sesión es más que un masaje; es un ritual diseñado para liberar la tensión profunda. Elige terapias de relajación exclusivas, guiadas por manos expertas, para un bienestar total."
     },
     "locations": {
-      "title": "Sucursales",
-      "text": "Actualmente tenemos presencia en dos ubicaciones en la ciudad de Tijuana, además de sucursales en Rosarito, Tecate y Ensenada."
+      "title": "El Arte de la Piel",
+      "text": "Nuestros rituales faciales van más allá de lo superficial. Logramos una hidratación profunda y una textura impecable que se siente tan vital como se ve."
     },
     "medical": {
-      "title": "Atención Médica",
-      "text": "Nuestros médicos brindan atención personalizada generando confianza y asegurando un servicio de calidad."
+      "title": "Fluir en Calma",
+      "text": "Sumérgete en el abrazo cálido de nuestro jacuzzi.  Diseñado para relajar tus músculos y despejar tu mente, marcando el inicio o el cierre perfecto de tu experiencia."
     }
   },
   "contact": {
@@ -162,7 +163,7 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados",
-    "description": "El ritual de spa",
+    "description": "Descubre tu calma más profunda",
     "navigation": "Navegación",
     "services": "Servicios",
     "contact": "Contáctanos",
