@@ -86,38 +86,50 @@
         "title": "Signature Collection",
         "description": "Exclusive experience of premium treatments inspired by ancient rituals and modern techniques.",
         "subServices": [
-          {
-            "title": "Ancient Ritual",
-            "duration": "120 min",
-            "price": "$250",
-            "description": "Full body treatment with exotic essential oils."
-          },
-          {
-            "title": "Diamond Experience",
-            "duration": "90 min",
-            "price": "$300",
-            "description": "Facial and body treatment with high-end products and colloidal gold."
-          }
-        ]
+      {
+        "title": "Deep Nourishment",
+        "duration": "60 min",
+        "price": "$75",
+        "description": "A deep awakening for the skin and energy. Hydrating serums and delicate massages nourish every layer, leaving your face revitalized, luminous, and in total harmony."
       },
-      "facial": {
-        "title": "Facial Treatments",
-        "description": "Care for your skin with natural products and professional techniques that restore its luminosity.",
-        "subServices": [
-          {
-            "title": "Deep Cleansing",
-            "duration": "60 min",
-            "price": "$75",
-            "description": "Removal of impurities and blackheads for fresh skin."
-          },
-          {
-            "title": "Hyaluronic Acid Hydration",
-            "duration": "90 min",
-            "price": "$130",
-            "description": "Restores the hydration barrier and softens fine lines."
-          }
-        ]
+      {
+        "title": "Facial Elixir",
+        "duration": "90 min",
+        "price": "$130",
+        "description": "A deep relaxation ritual that infuses the skin. We use a selection of elite serums and masks to regenerate and bestow an incomparable glow upon your face."
       },
+      {
+        "title": "Jade Gua Sha",
+        "duration": "90 min",
+        "price": "$130",
+        "description": "A Gua Sha massage that infuses energy and calm. Specific formulas and premium masks balance every layer of the skin, leaving the face profoundly harmonized, refreshed, and radiant."
+      }
+    ]
+      },
+     "facial": {
+    "title": "Facial Treatments",
+    "description": "Care for your skin with natural products and professional techniques that restore its radiance.",
+    "subServices": [
+      {
+        "title": "Deep Nourishment",
+        "duration": "60 min",
+        "price": "$75",
+        "description": "A deep awakening for the skin and energy. Hydrating serums and delicate massages nourish every layer, leaving your face revitalized, luminous, and in total harmony."
+      },
+      {
+        "title": "Facial Elixir",
+        "duration": "90 min",
+        "price": "$130",
+        "description": "A deep relaxation ritual that infuses the skin. We use a selection of elite serums and masks to regenerate and bestow an incomparable glow upon your face."
+      },
+      {
+        "title": "Jade Gua Sha",
+        "duration": "90 min",
+        "price": "$130",
+        "description": "A Gua Sha massage that infuses energy and calm. Specific formulas and premium masks balance every layer of the skin, leaving the face profoundly harmonized, refreshed, and radiant."
+      }
+    ]
+  },
       "wellness": {
         "title": "Wellness Rituals",
         "description": "Immerse yourself in a sensory experience that combines aromatherapy, music, and relaxation techniques.",

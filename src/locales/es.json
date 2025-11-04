@@ -105,16 +105,22 @@
         "description": "Cuida tu piel con productos naturales y técnicas profesionales que restauran su luminosidad.",
         "subServices": [
           {
-            "title": "Limpieza Profunda",
+            "title": "Nutrición profunda",
             "duration": "60 min",
             "price": "$75",
-            "description": "Eliminación de impurezas y puntos negros para una piel fresca."
+            "description": "Un despertar profundo para la piel y la energía. Sueros hidratantes y masajes delicados nutren cada capa, dejando tu rostro revitalizado, luminoso y en total armonía."
           },
           {
-            "title": "Hidratación con Ácido Hialurónico",
+            "title": "Elixir facial",
             "duration": "90 min",
             "price": "$130",
-            "description": "Restaura la barrera de hidratación y suaviza las líneas finas."
+            "description": "Un ritual de profunda relajación que infunde la piel. Utilizamos una selección de sueros y mascarillas de élite para regenerar y conferir a su rostro un brillo incomparable."
+          },
+            {
+            "title": "Jade Gua Sha",
+            "duration": "90 min",
+            "price": "$130",
+            "description": "Un masaje Gua Sha que infunde energía y calma. Fórmulas específicas y mascarillas premium equilibran cada capa de la piel, dejando el rostro profundamente armonizado, fresco y radiante."
           }
         ]
       },
