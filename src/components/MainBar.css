@@ -1,0 +1,53 @@
+/* ======================================= */
+/* AJUSTES DE ESTILO OFFCAVAS MÓVIL (FINAL) */
+/* ======================================= */
+
+/* 1. OFFCAVAS CONTENEDOR PRINCIPAL - (SIN CAMBIOS) */
+#offcanvasNavbar.offcanvas-start,
+.custom-offcanvas-bg {
+    background-color: #f7f6ef !important; 
+    height: 100vh !important;
+    width: 80vw !important; 
+}
+
+/* 2. ENCABEZADO DEL OFFCAVAS */
+.offcanvas-header {
+    padding-bottom: 0.5rem; 
+    /* Quitamos el border-bottom y usamos una clase de Bootstrap si es posible o un border más fuerte */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+/* 3. ENLACES DEL MENÚ (Alineación con Íconos y Separación) */
+.offcanvas-body .navbar-nav .nav-item {
+    margin-bottom: 1rem !important; 
+}
+
+.offcanvas-body .nav-link {
+    color: #333 !important; 
+    font-size: 1.2rem !important; 
+    font-weight: 500;
+    letter-spacing: 0.1em !important; 
+    transition: color 0.2s ease;
+    
+    /* 🚨 CLAVE: Usamos Flexbox para alinear el ícono y el texto 🚨 */
+    display: flex;
+    align-items: center; /* Centrado vertical */
+}
+
+.offcanvas-body .nav-link i {
+    /* Ajustamos el tamaño del ícono */
+    font-size: 1.1rem;
+    color: #555; /* Un tono un poco más suave para el ícono */
+}
+
+.offcanvas-body .nav-link:hover {
+    color: #000 !important;
+}
+
+/* 4. Ocultar el Offcanvas en resoluciones de escritorio - (SIN CAMBIOS) */
+@media (min-width: 992px) {
+    .offcanvas {
+        visibility: hidden !important; 
+        display: none !important;
+    }
+}

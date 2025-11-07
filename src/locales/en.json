@@ -8,6 +8,9 @@
     "reserve": "RESERVE",
     "reserve_a_now": "BOOK A SERVICE"
   },
+   "canvas": {
+    "select": "Select Language"
+  },
   "hero": {
     "title": "Welcome to HEDRA SPA",
     "subtitle": "Discover your deepest calm"
