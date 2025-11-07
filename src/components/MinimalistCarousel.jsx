@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 // Lista de imágenes para el carrusel (puedes reemplazar estas URLs con tu Base64 si lo deseas)
 const IMAGES = [
-    'https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
-    'https://cdn.pixabay.com/photo/2018/03/06/13/53/spa-3203470_1280.jpg',
-    'https://cdn.pixabay.com/photo/2016/04/13/22/12/hands-1327811_1280.jpg',
-    'https://cdn.pixabay.com/photo/2017/09/20/14/58/massage-2768832_1280.jpg',
+    'https://images.pexels.com/photos/6187638/pexels-photo-6187638.jpeg',
+    'https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
+    'https://images.pexels.com/photos/6663465/pexels-photo-6663465.jpeg',
+    'https://images.pexels.com/photos/6629614/pexels-photo-6629614.jpeg',
 ];
 
 const MinimalistCarousel = ({ heroContent }) => { 

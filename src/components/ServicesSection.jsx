@@ -8,12 +8,12 @@ const servicesData = [
   {
     id: 1, 
     key: 'therapeutic', // Body Treatments
-    imageUrl: 'https://cdn.pixabay.com/photo/2014/03/11/22/56/new-year-285587_1280.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
   },
   {
     id: 3,
     key: 'facial', // Facial Treatments
-    imageUrl: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
+    imageUrl: 'https://images.pexels.com/photos/6663567/pexels-photo-6663567.jpeg',
   },
 ];
 
