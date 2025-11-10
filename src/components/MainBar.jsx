@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
 
 import logoImage from '../assets/spa-logo-bgbk.svg';
-import logoImageCanvas from '../assets/spa-logo-bgtp.svg';
-import LanguageSelector from './LanguageSelector';
+import logoImageCanvas from '/logo-icon.png'; 
+
 
 const MainNavbar = ({ logoAlt }) => { 
   const { t } = useTranslation();
@@ -34,17 +35,23 @@ const MainNavbar = ({ logoAlt }) => {
       window.location.href = path;
     }, 50);
   };
+  
+  // Fondo claro para el Offcanvas
+  const offcanvasBgColor = '#D4DBC8'; 
+  
+  // Estilo para el botón del selector de idioma DENTRO del Offcanvas (fondo claro, texto negro)
+  const darkButtonStyle = { color: 'black' }; // Texto negro
 
   return (
     <>
-      {/* NAVBAR PRINCIPAL */}
+      {/* NAVBAR PRINCIPAL (Transparente) */}
       <nav className="navbar navbar-expand-lg bg-transparent py-1 shadow-sm position-absolute top-0 w-100 z-3 navbar-dark">
         <div className="container">
           <a className="navbar-brand" href="#">
             <img src={logoImage} alt={logoAlt || 'SPA'} height="120" /> 
           </a>
 
-          {/* BOTÓN HAMBURGUESA */}
+          {/* BOTÓN HAMBURGUESA - Sigue siendo blanco (navbar-dark) */}
           <button
             className="navbar-toggler"
             type="button"
@@ -66,25 +73,34 @@ const MainNavbar = ({ logoAlt }) => {
                 </li>
               ))}
               <li className="nav-item ms-3">
-                <LanguageSelector />
+                {/* Selector para la Navbar principal (fondo oscuro -> texto blanco) */}
+                <LanguageSelector /> 
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      {/* OFFCANVAS (MÓVIL) */}
+      {/* OFFCANVAS (MÓVIL) - FONDO CLARO Y TEXTO OSCURO */}
       <div 
         className="offcanvas offcanvas-start custom-offcanvas-bg" 
         tabIndex="-1" 
         id="offcanvasNavbar" 
         aria-labelledby="offcanvasNavbarLabel"
+        style={{ backgroundColor: offcanvasBgColor }} // Fondo claro
       >
         <div className="offcanvas-header">
-          <img src={logoImageCanvas} alt={logoAlt || 'SPA'} height="90" className="d-block me-auto" />
+          {/* Logo centrado */}
+          <img 
+            src={logoImageCanvas} 
+            alt={logoAlt || 'SPA'} 
+            height="130" 
+            className="mx-auto" 
+          />
+          {/* Botón de cierre oscuro para fondo claro */}
           <button 
             type="button" 
-            className="btn-close text-reset" 
+            className="btn-close btn-close-dark text-reset position-absolute top-0 end-0 m-3" // ✨ CAMBIO CLAVE: btn-close-dark
             data-bs-dismiss="offcanvas" 
             aria-label="Close"
           ></button>
@@ -94,7 +110,7 @@ const MainNavbar = ({ logoAlt }) => {
             {navItems.map((item) => (
               <li className="nav-item" key={item.key}>
                 <a 
-                  className="nav-link text-uppercase text-dark offcanvas-link-icon" 
+                  className="nav-link text-uppercase text-dark offcanvas-link-icon" // ✨ CAMBIO CLAVE: text-dark
                   href={item.path} 
                   onClick={(e) => handleLinkClick(e, item.path)}
                 >
@@ -104,8 +120,11 @@ const MainNavbar = ({ logoAlt }) => {
               </li>
             ))}
             <li className="nav-item mt-5 border-top pt-3">
-              <h6 className="text-uppercase text-dark mb-2">{t('canvas.select')}</h6>
-              <LanguageSelector /> 
+              <h6 className="text-uppercase text-dark mb-2">{t('canvas.select')}</h6> {/* ✨ CAMBIO CLAVE: text-dark */}
+              <LanguageSelector 
+                variant="light" // ✨ CAMBIO CLAVE: variant="light" (fondo claro -> texto oscuro)
+                buttonStyle={darkButtonStyle} 
+              /> 
             </li>
           </ul>
         </div>
