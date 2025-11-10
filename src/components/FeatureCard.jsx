@@ -22,17 +22,16 @@ const getIconComponent = (key) => {
       return null;
   }
 };
-
 const FeatureCard = ({ featureKey }) => {
   const { t } = useTranslation();
   const IconComponent = getIconComponent(featureKey);
   
-  // Define el color del ícono (blanco) para pasarlo directamente al componente IconComponent
   const iconColor = '#ffffff'; 
 
   return (
-    // Columna para que se vea bien dentro de una fila de 3 elementos (col-md-4)
-    <div className="col-md-4 mb-5 text-center">
+    // CAMBIO CLAVE: Eliminar la clase de columna (col-md-4) aquí.
+    // Dejamos solo los estilos internos para el contenido de la tarjeta.
+    <div className="mb-5 text-center"> 
       
       {/* Contenedor del Ícono (Círculo de color #2D621E) */}
       <div 
@@ -40,14 +39,14 @@ const FeatureCard = ({ featureKey }) => {
         style={{
           width: '120px',
           height: '120px',
-          borderRadius: '50%', // Hace la forma circular
-          backgroundColor: '#2D621E', // Fondo verde/marrón oscuro
+          borderRadius: '50%',
+          backgroundColor: '#2D621E',
         }}
       >
         {IconComponent && (
           <IconComponent 
             size={48} 
-            color={iconColor} // 💡 CORRECCIÓN: Usa la prop 'color' para el color del ícono
+            color={iconColor}
           />
         )}
       </div>

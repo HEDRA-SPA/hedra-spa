@@ -106,40 +106,6 @@ const MinimalistCarousel = ({ heroContent }) => {
                 ))}
             </div>
             
-            {/* OVERLAY DE TEXTO DE BIENVENIDA - CORREGIDO SEMANTICAMENTE */}
-            <div
-                className="position-absolute top-50 start-50 translate-middle text-center"
-                style={{
-                    zIndex: 9, 
-                    color: 'white',
-                    padding: '20px',
-                    width: '90%', // Responsivo
-                }}
-            >
-                {/* Título - Usamos h1 directamente, y usamos t() para la traducción */}
-                <h1 
-                    style={{
-                        fontSize: '3.5rem', 
-                        fontWeight: '700',
-                        marginBottom: '0.5rem',
-                        lineHeight: '1.2',
-                    }}
-                    className="d-none d-sm-block"
-                >
-                    {t('services.title')}
-                </h1>
-                {/* Subtítulo - Usamos p directamente, y usamos t() para la traducción */}
-                <p 
-                    style={{
-                        fontSize: '1.5rem', 
-                        fontWeight: '400',
-                    }}
-                    className="lead"
-                >
-                    {t('services.description')}
-                </p>
-            </div>
-
             {/* CONTROL: Flecha Izquierda (Anterior) */}
             <button 
                 onClick={prevSlide} 

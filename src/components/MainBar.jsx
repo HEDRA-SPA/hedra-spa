@@ -1,11 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-// ✅ Importaciones reales de imágenes
 import logoImage from '../assets/spa-logo-bgbk.svg';
 import logoImageCanvas from '../assets/spa-logo-bgtp.svg';
-
-// ✅ Usa tu LanguageSelector real (no el simulado)
 import LanguageSelector from './LanguageSelector';
 
 const MainNavbar = ({ logoAlt }) => { 

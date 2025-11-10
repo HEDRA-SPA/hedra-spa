@@ -5,7 +5,7 @@ const WhatsAppReservation = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
-  const phoneNumber = "526643723351"; // 👈 tu número aquí
+  const phoneNumber = "526646110685"; // 👈 tu número aquí
 
   const handleSubmit = (e) => {
     e.preventDefault();

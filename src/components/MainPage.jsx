@@ -16,7 +16,7 @@ function MainPage() {
 
   // Función para generar el enlace de WhatsApp con el mensaje traducido
   const getWhatsAppLink = () => {
-    const phoneNumber = "526643723351";
+    const phoneNumber = "526646110685";
     const message = encodeURIComponent(t('whatsapp.message'));
     return `https://wa.me/${phoneNumber}?text=${message}`;
   };
