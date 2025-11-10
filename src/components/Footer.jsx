@@ -62,7 +62,7 @@ const Footer = () => {
                         </h5>
                         <ul className="list-unstyled">
                             <li className="mb-2">
-                                <a href="hedra-spa.vercel.app/servicio/1" className="text-decoration-none" style={{ color: '#f7f6ef' }}>
+                                <a href="/servicio/1" className="text-decoration-none" style={{ color: '#f7f6ef' }}>
                                     {t('services.items.therapeutic.title')}
                                 </a>
                             </li>
