@@ -87,7 +87,6 @@ const AboutSection = () => {
               {t('about.mainText')}
             </p>
 
-            {/* Párrafo secundario */}
             <p>
               {t('about.secondaryText')}
             </p>

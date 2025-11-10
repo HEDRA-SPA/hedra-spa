@@ -3,9 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import '../ServicesSection.css';
 import './ServiceDetail.css';
-import MainNavbar from '../MainBar';
 import Footer from '../Footer';
 import { PopupButton } from 'react-calendly';
+import NavbarDefault from '../NavbarDefault';
 
 // Solo Body Treatments y Facial Treatments
 const serviceKeyMap = {
@@ -47,7 +47,7 @@ function ServiceDetail() {
 
 return (
     <div className="service-detail-page">
-      <MainNavbar/>
+     <NavbarDefault />
 
       <div className="service-detail container">
         {/* ... Encabezado y Descripción principal ... */}
