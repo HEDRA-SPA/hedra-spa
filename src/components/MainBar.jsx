@@ -45,7 +45,7 @@ const MainNavbar = ({ logoAlt }) => {
   return (
     <>
       {/* NAVBAR PRINCIPAL (Transparente) */}
-      <nav className="navbar navbar-expand-lg bg-transparent py-1 shadow-sm position-absolute top-0 w-100 z-3 navbar-dark">
+      <nav className="navbar navbar-expand-lg bg-transparent py-1  position-absolute top-0 w-100 z-3 navbar-dark">
         <div className="container">
           <a className="navbar-brand" href="#">
             <img src={logoImage} alt={logoAlt || 'SPA'} height="120" /> 
