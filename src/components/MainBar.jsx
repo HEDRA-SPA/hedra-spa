@@ -83,11 +83,14 @@ const MainNavbar = ({ logoAlt }) => {
 
       {/* OFFCANVAS (MÓVIL) - FONDO CLARO Y TEXTO OSCURO */}
       <div 
-        className="offcanvas offcanvas-start custom-offcanvas-bg" 
+        className="offcanvas offcanvas-start w-100" 
         tabIndex="-1" 
         id="offcanvasNavbar" 
         aria-labelledby="offcanvasNavbarLabel"
-        style={{ backgroundColor: offcanvasBgColor }} // Fondo claro
+        style={{ 
+          backgroundColor: offcanvasBgColor,
+          maxWidth: '100vw'
+        }}
       >
         <div className="offcanvas-header">
           {/* Logo centrado */}
@@ -100,7 +103,7 @@ const MainNavbar = ({ logoAlt }) => {
           {/* Botón de cierre oscuro para fondo claro */}
           <button 
             type="button" 
-            className="btn-close btn-close-dark text-reset position-absolute top-0 end-0 m-3" // ✨ CAMBIO CLAVE: btn-close-dark
+            className="btn-close btn-close-dark text-reset position-absolute top-0 end-0 m-3"
             data-bs-dismiss="offcanvas" 
             aria-label="Close"
           ></button>
@@ -110,7 +113,7 @@ const MainNavbar = ({ logoAlt }) => {
             {navItems.map((item) => (
               <li className="nav-item" key={item.key}>
                 <a 
-                  className="nav-link text-uppercase text-dark offcanvas-link-icon" // ✨ CAMBIO CLAVE: text-dark
+                  className="nav-link text-uppercase text-dark offcanvas-link-icon"
                   href={item.path} 
                   onClick={(e) => handleLinkClick(e, item.path)}
                 >
@@ -120,9 +123,9 @@ const MainNavbar = ({ logoAlt }) => {
               </li>
             ))}
             <li className="nav-item mt-5 border-top pt-3">
-              <h6 className="text-uppercase text-dark mb-2">{t('canvas.select')}</h6> {/* ✨ CAMBIO CLAVE: text-dark */}
+              <h6 className="text-uppercase text-dark mb-2">{t('canvas.select')}</h6>
               <LanguageSelector 
-                variant="light" // ✨ CAMBIO CLAVE: variant="light" (fondo claro -> texto oscuro)
+                variant="light"
                 buttonStyle={darkButtonStyle} 
               /> 
             </li>

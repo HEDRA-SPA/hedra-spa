@@ -2,6 +2,8 @@ body {
   font-family: 'Playfair Display', serif;
   overflow-y: auto;
   background-color: #f7f6ef;
+  overflow-x: hidden !important;
+  padding-right: 0 !important;
 }
 /* Sobrescribe el borde del botón de Calendly */
 button.calendly-button, 
@@ -10,4 +12,13 @@ button.calendly-button,
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+}
+body.modal-open,
+body.offcanvas-open {
+  padding-right: 0 !important;
+}
+
+/* Opcional: Si usas un navbar fijo, también aplica esto */
+.navbar.fixed-top {
+  padding-right: 0 !important;
 }
