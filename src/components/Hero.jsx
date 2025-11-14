@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PopupButton } from 'react-calendly';
+import video from '/video_hero.mp4';
 
-const VIDEO_URL = 'https://www.pexels.com/es-es/download/video/32828415/'; 
+const VIDEO_URL = video; 
 
 const Hero = ({ imageUrl }) => {
   const { t, i18n } = useTranslation();

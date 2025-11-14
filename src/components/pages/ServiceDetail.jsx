@@ -10,42 +10,57 @@ import NavbarDefault from '../NavbarDefault';
 import photo_facial from '/photo_facial.jpeg';
 import photo_therapeutic from '/photo_therapeutic.jpg';
 
-const serviceKeyMap = {
-  1: 'therapeutic',
-  3: 'facial'
-};
-
-// Imágenes asociadas
 const serviceImageMap = {
-  therapeutic: photo_therapeutic,
-  facial: photo_facial
+  therapeutic: photo_therapeutic,
+  facial: photo_facial
 };
 
-  const calendlyUrl = 'https://calendly.com/hedraspa/30min'
+const languageSlugMap = {
+  therapeutic: {
+    es: 'corporal', 
+    en: 'body',    
+  },
+  facial: {
+    es: 'facial',
+    en: 'facial',
+  },
+};
+
+const getServiceKeyFromSlug = (lang, slug) => {
+    // Esta función sigue funcionando perfectamente, ya que solo mira 'lang' y 'slug'
+    const foundKey = Object.keys(languageSlugMap).find(key => {
+        return languageSlugMap[key][lang] === slug;
+    });
+    return foundKey; 
+};
+
+const calendlyUrl = 'https://calendly.com/hedraspa/30min'
 
 function ServiceDetail() {
-  const { id } = useParams();
-  const { t } = useTranslation();
-  const serviceKey = serviceKeyMap[id];
-
-  if (!serviceKey) {
-    return (
-      <div className="service-detail-page">
-        <div className="service-detail container">
-          <h2>{t('services.notFound')}</h2>
-          <Link to="/" className="back-btn">{t('common.backToHome')}</Link>
-        </div>
-      </div>
-    );
-  }
-
-  const service = {
-    key: serviceKey,
-    title: t(`services.items.${serviceKey}.title`),
-    description: t(`services.items.${serviceKey}.description`),
-    imageUrl: serviceImageMap[serviceKey],
-    subServices: t(`services.items.${serviceKey}.subServices`, { returnObjects: true })
-  };
+  const { lang, slug } = useParams(); 
+  const { t } = useTranslation();
+  
+  const serviceKey = getServiceKeyFromSlug(lang, slug);
+  if (!serviceKey || !serviceImageMap[serviceKey]) {
+    return (
+      <div className="service-detail-page">
+        <div className="service-detail container">
+          <NavbarDefault /> 
+          <h2 className='mt-5 pt-5'>{t('services.notFound')}</h2>
+          <Link to="/" className="back-btn">{t('common.backToHome')}</Link>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+  
+  const service = {
+    key: serviceKey,
+    title: t(`services.items.${serviceKey}.title`),
+    description: t(`services.items.${serviceKey}.description`),
+    imageUrl: serviceImageMap[serviceKey],
+    subServices: t(`services.items.${serviceKey}.subServices`, { returnObjects: true })
+  };
 
 return (
     <div className="service-detail-page">
@@ -91,7 +106,7 @@ return (
                 }}
               />
             </div>
-<WhatsAppButton/>
+            <WhatsAppButton/>
           </div>
         ) : (
           <p className="no-subservices">{t('services.noTreatmentsAvailable')}</p>

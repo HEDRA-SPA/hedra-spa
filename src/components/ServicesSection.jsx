@@ -3,31 +3,55 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './styles/ServicesSection.css';
 import MinimalistCarousel from './MinimalistCarousel';
+import photo_therapeutic from '/photo_carrousel_2.avif';
+import photo_facial_2 from '/photo_facial_2.jpeg';
+
+
+const languageSlugMap = {
+  therapeutic: {
+    es: 'corporal', 
+    en: 'body',
+  },
+  facial: {
+    es: 'facial',
+    en: 'facial',
+  },
+};
+
+const routeSegmentMap = {
+    es: 'servicio',
+    en: 'service',
+};
 
 const servicesData = [
   {
     id: 1, 
     key: 'therapeutic', 
-    imageUrl: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
+    imageUrl: photo_therapeutic,
   },
   {
     id: 3,
     key: 'facial', 
-    imageUrl: 'https://images.pexels.com/photos/6663567/pexels-photo-6663567.jpeg',
+    slug: 'facial',
+    imageUrl: photo_facial_2,
   },
 ];
-
 const ServicesSection = () => {
-  const { t } = useTranslation();
+  // CORRECCIÓN: Desestructuramos { t } e { i18n } correctamente
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  
+  // Obtenemos el segmento de ruta traducido
+  const routeSegment = routeSegmentMap[currentLang] || 'servicio';
+
 
   return (
-    <section  className="spa-services-section">
+    <section  className="spa-services-section">
       {/* Carrusel */}
       <div className="mb-5"> 
         <MinimalistCarousel/>
       </div>
 
-      {/* Contenedor de tarjetas */}
       <div id="servicios" className="container">
         <div className="services-grid two-columns">
           {servicesData.map((service) => (
@@ -42,7 +66,11 @@ const ServicesSection = () => {
 
               <div className="card-footer">
                 <h3 className="card-title">{t(`services.items.${service.key}.title`)}</h3>
-                <Link to={`/servicio/${service.id}`} className="view-more-btn">
+                <Link 
+                  // Generamos la URL: /:lang/:segmento_traducido/:slug_traducido
+                  to={`/${currentLang}/${routeSegment}/${languageSlugMap[service.key][currentLang]}`} 
+                  className="view-more-btn"
+                > 
                   {t('services.viewMore')}
                 </Link>
               </div>

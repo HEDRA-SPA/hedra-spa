@@ -3,8 +3,32 @@ import { useTranslation } from 'react-i18next';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+const languageSlugMap = {
+  therapeutic: { es: 'corporal', en: 'body' },
+  facial: { es: 'facial', en: 'facial' },
+};
+
+// 🟢 MAPA PARA TRADUCIR EL SEGMENTO DE RUTA (servicio / service)
+const routeSegmentMap = {
+    es: 'servicio',
+    en: 'service',
+};
+
 const Footer = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const currentLang = i18n.language;
+    
+    // Función para generar la URL del servicio con el prefijo de idioma y el slug correcto
+    const generateServiceLink = (serviceKey) => {
+        // 🟢 1. Obtener el segmento traducido ('servicio' o 'service')
+        const routeSegment = routeSegmentMap[currentLang] || 'servicio';
+        // 2. Obtener el slug traducido ('corporal' o 'body')
+        const slug = languageSlugMap[serviceKey][currentLang] || languageSlugMap[serviceKey]['es'];
+        
+        // 🟢 3. Generar la URL en el formato /:lang/:segmento/:slug
+        return `/${currentLang}/${routeSegment}/${slug}`; 
+    };
+
     return (
         <footer 
             className="text-white py-5" 
@@ -21,10 +45,10 @@ const Footer = () => {
                             {t('footer.description')}
                         </p>
                         <div className="d-flex mt-4">
-                            <a href="#" className="me-3" aria-label="Facebook" style={{ color: '#f7f6ef' }}>
+                            <a href="https://www.facebook.com/share/1Czt9uS2vX/" className="me-3" aria-label="Facebook" style={{ color: '#f7f6ef' }}>
                                 <FaFacebookF size={20} />
                             </a>
-                            <a href="#" className="me-3" aria-label="Instagram" style={{ color: '#f7f6ef' }}>
+                            <a href="https://www.instagram.com/hedra_spa/" className="me-3" aria-label="Instagram" style={{ color: '#f7f6ef' }}>
                                 <FaInstagram size={20} />
                             </a>
                         </div>
@@ -35,34 +59,34 @@ const Footer = () => {
                             {t('footer.navigation')}
                         </h5>
                         <ul className="list-unstyled">
-    <li className="mb-2">
-        <Link 
-            to={{ pathname: '/', hash: '#nosotros' }} 
-            className="text-decoration-none" 
-            style={{ color: '#f7f6ef' }}
-        >
-            {t('footer.links.about')}
-        </Link>
-    </li>
-    <li className="mb-2">
-        <Link 
-            to={{ pathname: '/', hash: '#servicios' }} 
-            className="text-decoration-none" 
-            style={{ color: '#f7f6ef' }}
-        >
-            {t('footer.links.services')}
-        </Link>
-    </li>
-    <li className="mb-2">
-        <Link 
-            to={{ pathname: '/', hash: '#contacto' }} 
-            className="text-decoration-none" 
-            style={{ color: '#f7f6ef' }}
-        >
-            {t('footer.links.contact')}
-        </Link>
-    </li>
-</ul>
+                            <li className="mb-2">
+                                <Link 
+                                    to={{ pathname: '/', hash: '#nosotros' }} 
+                                    className="text-decoration-none" 
+                                    style={{ color: '#f7f6ef' }}
+                                >
+                                    {t('footer.links.about')}
+                                </Link>
+                            </li>
+                            <li className="mb-2">
+                                <Link 
+                                    to={{ pathname: '/', hash: '#servicios' }} 
+                                    className="text-decoration-none" 
+                                    style={{ color: '#f7f6ef' }}
+                                >
+                                    {t('footer.links.services')}
+                                </Link>
+                            </li>
+                            <li className="mb-2">
+                                <Link 
+                                    to={{ pathname: '/', hash: '#contacto' }} 
+                                    className="text-decoration-none" 
+                                    style={{ color: '#f7f6ef' }}
+                                >
+                                    {t('footer.links.contact')}
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                     
                     <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
@@ -71,12 +95,22 @@ const Footer = () => {
                         </h5>
                         <ul className="list-unstyled">
                             <li className="mb-2">
-                                <a href="/servicio/1" className="text-decoration-none" style={{ color: '#f7f6ef' }}>
+                                {/* ENLACE DINÁMICO para Terapéutico/Corporal/Body */}
+                                <a 
+                                    href={generateServiceLink('therapeutic')} 
+                                    className="text-decoration-none" 
+                                    style={{ color: '#f7f6ef' }}
+                                >
                                     {t('services.items.therapeutic.title')}
                                 </a>
                             </li>
                           <li className="mb-2">
-                                <a href="/servicio/3" className="text-decoration-none" style={{ color: '#f7f6ef' }}>
+                                {/* ENLACE DINÁMICO para Facial */}
+                                <a 
+                                    href={generateServiceLink('facial')} 
+                                    className="text-decoration-none" 
+                                    style={{ color: '#f7f6ef' }}
+                                >
                                     {t('services.items.facial.title')}
                                 </a>
                             </li>

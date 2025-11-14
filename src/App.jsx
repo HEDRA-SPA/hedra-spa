@@ -9,9 +9,12 @@ function App() {
     <Router>
       <ScrollToTop/>
       <Routes>
-        {/* Página principal */}
+        {/* Ruta de inicio */}
         <Route path="/" element={<MainPage />} />
-        <Route path="/servicio/:id" element={<ServiceDetail />} />
+        <Route path="/:lang/servicio/:slug" element={<ServiceDetail />} />
+        <Route path="/:lang/service/:slug" element={<ServiceDetail />} />
+        <Route path="/:lang" element={<MainPage />} />
+        
       </Routes>
     </Router>
   );
