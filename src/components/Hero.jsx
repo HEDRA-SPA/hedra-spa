@@ -29,14 +29,14 @@ const Hero = ({ imageUrl }) => {
         muted
         playsInline
         style={{
-          position: 'absolute', // Volvemos a absolute
+          position: 'absolute', 
           top: '50%',
           left: '50%',
           minWidth: '100%',
           minHeight: '100%',
           width: 'auto',
           height: 'auto',
-          zIndex: 0, // Cambiamos a 0
+          zIndex: 0, 
           transform: 'translate(-50%, -50%)',
           objectFit: 'cover',
         }}
@@ -46,7 +46,7 @@ const Hero = ({ imageUrl }) => {
 
       <div 
         style={{
-          position: 'absolute', // Volvemos a absolute
+          position: 'absolute', 
           top: 0,
           left: 0,
           right: 0,
@@ -57,11 +57,10 @@ const Hero = ({ imageUrl }) => {
         }}
       ></div>
 
-      {/* Contenido centrado */}
       <div 
         style={{ 
           position: 'relative',
-          zIndex: 2, // Cambiamos a 2 para estar por encima del video y overlay
+          zIndex: 2, 
           width: '100%',
           padding: '0 15px',
           maxWidth: '1140px',
@@ -79,7 +78,7 @@ const Hero = ({ imageUrl }) => {
           styles={{
               borderRadius: "15px",
               color: "#000",
-              backgroundColor: "#d6c8b1ff",
+              backgroundColor: "#eee5d6ff",
               outline: "none",
               boxShadow: "none",
               border: "none"

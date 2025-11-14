@@ -16,12 +16,8 @@ const ContactForm = () => {
     message: ''
   });
 
-// Color de acento usado en la sección About
 const ACCENT_COLOR = '#2d621e'; 
-
-// ⭐ NUEVO COLOR INTERIOR MÁS CLARO Y LIGERAMENTE GRISÁCEO
 const FORM_CARD_COLOR = '#f7f6ef'; 
-// ⭐ NUEVO COLOR DE FONDO DE INPUTS, ligeramente más oscuro que la tarjeta, para dar profundidad
 const INPUT_BG_COLOR = '#f4f3ebff'; 
 
   const handleChange = (e) => {
@@ -106,7 +102,6 @@ const INPUT_BG_COLOR = '#f4f3ebff';
 
   return (
     <>
-      {/* Container de Toastify */}
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -125,18 +120,16 @@ const INPUT_BG_COLOR = '#f4f3ebff';
         id="contacto" 
         className="py-5" 
         style={{ 
-            backgroundColor: '#f7f6ef', // Fondo cremoso
-            fontFamily: 'Playfair Display, serif ' // Añadir fuente
+            backgroundColor: '#f7f6ef', 
+            fontFamily: 'Playfair Display, serif ' 
         }} 
       > 
         <div className="container">
           <div className="row justify-content-center">
-            {/* ⭐ CAMBIO 1: Hacemos el formulario más ancho, de col-lg-8 a col-lg-10 */}
             <div className="col-lg-10">
-                {/* ⭐ CAMBIO 2: Cambio de color de la "Tarjeta" del formulario */}
                 <div 
                     className="p-5 p-md-5 rounded-4 shadow-lg" 
-                    style={{ backgroundColor: FORM_CARD_COLOR }} /* Usamos el nuevo color grisáceo */
+                    style={{ backgroundColor: FORM_CARD_COLOR }}
                 >
               <h2>{t('contact.title')}</h2>
               <form onSubmit={handleSubmit}>
@@ -155,7 +148,7 @@ const INPUT_BG_COLOR = '#f4f3ebff';
                       disabled={isLoading}
                       style={{ 
                             borderRadius: '0.75rem',
-                            backgroundColor: INPUT_BG_COLOR // ⭐ CAMBIO 3: Fondo de input no blanco
+                            backgroundColor: INPUT_BG_COLOR 
                         }} 
                     />
                   </div>
@@ -173,7 +166,7 @@ const INPUT_BG_COLOR = '#f4f3ebff';
                       disabled={isLoading}
                       style={{ 
                             borderRadius: '0.75rem',
-                            backgroundColor: INPUT_BG_COLOR // ⭐ CAMBIO 3: Fondo de input no blanco
+                            backgroundColor: INPUT_BG_COLOR 
                         }}
                     />
                   </div>
@@ -192,7 +185,7 @@ const INPUT_BG_COLOR = '#f4f3ebff';
                     disabled={isLoading}
                       style={{ 
                             borderRadius: '0.75rem',
-                            backgroundColor: INPUT_BG_COLOR // ⭐ CAMBIO 3: Fondo de input no blanco
+                            backgroundColor: INPUT_BG_COLOR 
                         }} 
                   />
                 </div>
@@ -211,7 +204,7 @@ const INPUT_BG_COLOR = '#f4f3ebff';
                     disabled={isLoading}
                       style={{ 
                             borderRadius: '0.75rem',
-                            backgroundColor: INPUT_BG_COLOR // ⭐ CAMBIO 3: Fondo de input no blanco
+                            backgroundColor: INPUT_BG_COLOR 
                         }} 
                   ></textarea>
                 </div>
@@ -228,7 +221,6 @@ const INPUT_BG_COLOR = '#f4f3ebff';
                           borderRadius: '0.75rem',
                           transition: 'background-color 0.3s ease' 
                       }}
-                      // Manejo de hover simple para el efecto visual
                       onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#4d554a'} 
                       onMouseOut={(e) => e.currentTarget.style.backgroundColor = ACCENT_COLOR} 
                   >
@@ -243,7 +235,7 @@ const INPUT_BG_COLOR = '#f4f3ebff';
                   </button>
                 </div>
               </form>
-                </div> {/* Cierre del div de la tarjeta del formulario */}
+                </div> 
             </div>
           </div>
         </div>

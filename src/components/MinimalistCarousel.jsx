@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import photo_carrousel_1 from '/photo_carrousel_1.jpeg';
+import photo_carrousel_2 from '/photo_carrousel_2.avif';
+import photo_carrousel_3 from '/photo_carrousel_3.jpeg';
+import photo_carrousel_4 from '/photo_carrousel_4.jpeg';
 
-// Lista de imágenes para el carrusel (puedes reemplazar estas URLs con tu Base64 si lo deseas)
 const IMAGES = [
-    'https://images.pexels.com/photos/6187638/pexels-photo-6187638.jpeg',
-    'https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
-    'https://images.pexels.com/photos/6663465/pexels-photo-6663465.jpeg',
-    'https://images.pexels.com/photos/6629614/pexels-photo-6629614.jpeg',
+    photo_carrousel_1,
+    photo_carrousel_2,
+    photo_carrousel_3,
+    photo_carrousel_4,
 ];
 
 const MinimalistCarousel = ({ heroContent }) => { 
-    // Usamos el hook de traducción dentro del componente
     const { t } = useTranslation(); 
     const [activeIndex, setActiveIndex] = useState(0);
 
-    // Componente de flecha izquierda SVG (ChevronLeft)
     const ChevronLeftIcon = ({ size = 24, color = 'currentColor' }) => (
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -32,7 +33,6 @@ const MinimalistCarousel = ({ heroContent }) => {
         </svg>
     );
 
-    // Componente de flecha derecha SVG (ChevronRight)
     const ChevronRightIcon = ({ size = 24, color = 'currentColor' }) => (
         <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -50,43 +50,37 @@ const MinimalistCarousel = ({ heroContent }) => {
         </svg>
     );
 
-    // Función para ir a la diapositiva anterior
     const prevSlide = () => {
         setActiveIndex((prevIndex) => 
             prevIndex === 0 ? IMAGES.length - 1 : prevIndex - 1
         );
     };
 
-    // Función para ir a la diapositiva siguiente
     const nextSlide = () => {
         setActiveIndex((prevIndex) => 
             prevIndex === IMAGES.length - 1 ? 0 : prevIndex + 1
         );
     };
 
-    // Efecto para la transición automática (cada 5 segundos)
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
         }, 5000); 
 
-        // Limpieza del intervalo
         return () => clearInterval(interval);
-    }, [IMAGES.length]); // Dependencia ajustada para evitar warnings
+    }, [IMAGES.length]); 
 
     return (
         <div 
             className="position-relative overflow-hidden" 
             style={{ 
-                height: '500px', // Altura fija
+                height: '500px', 
                 fontFamily: 'Monserrat, sans-serif',
             }}
         >
-            {/* Contenedor de las diapositivas */}
             <div 
                 className="d-flex h-100"
                 style={{
-                    // Mueve el contenedor horizontalmente
                     transform: `translateX(-${activeIndex * 100}%)`,
                     transition: 'transform 0.8s ease-in-out',
                 }}
@@ -95,7 +89,7 @@ const MinimalistCarousel = ({ heroContent }) => {
                     <div 
                         key={index} 
                         style={{ 
-                            flex: '0 0 100%', // Cada diapositiva ocupa el 100%
+                            flex: '0 0 100%', 
                             backgroundImage: `url(${src})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
@@ -106,7 +100,6 @@ const MinimalistCarousel = ({ heroContent }) => {
                 ))}
             </div>
             
-            {/* CONTROL: Flecha Izquierda (Anterior) */}
             <button 
                 onClick={prevSlide} 
                 className="btn position-absolute top-50 start-0 translate-middle-y"
@@ -124,7 +117,6 @@ const MinimalistCarousel = ({ heroContent }) => {
                 <ChevronLeftIcon color="white" size={24} />
             </button>
 
-            {/* CONTROL: Flecha Derecha (Siguiente) */}
             <button 
                 onClick={nextSlide} 
                 className="btn position-absolute top-50 end-0 translate-middle-y"
@@ -142,7 +134,6 @@ const MinimalistCarousel = ({ heroContent }) => {
                 <ChevronRightIcon color="white" size={24} />
             </button>
 
-            {/* INDICADORES */}
             <div className="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex gap-2">
                 {IMAGES.map((_, index) => (
                     <div

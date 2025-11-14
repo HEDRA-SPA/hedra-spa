@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import LanguageSelector from './LanguageSelector';
+import LanguageSelector from './utils/LanguageSelector';
 
 import logoImage from '../assets/spa-logo-bgbk.svg';
 import logoImageCanvas from '/logo-icon.png'; 
@@ -36,11 +36,9 @@ const MainNavbar = ({ logoAlt }) => {
     }, 50);
   };
   
-  // Fondo claro para el Offcanvas
   const offcanvasBgColor = '#D4DBC8'; 
   
-  // Estilo para el botón del selector de idioma DENTRO del Offcanvas (fondo claro, texto negro)
-  const darkButtonStyle = { color: 'black' }; // Texto negro
+  const darkButtonStyle = { color: 'black' }; 
 
   return (
     <>
@@ -51,7 +49,6 @@ const MainNavbar = ({ logoAlt }) => {
             <img src={logoImage} alt={logoAlt || 'SPA'} height="120" /> 
           </a>
 
-          {/* BOTÓN HAMBURGUESA - Sigue siendo blanco (navbar-dark) */}
           <button
             className="navbar-toggler"
             type="button"
@@ -73,7 +70,6 @@ const MainNavbar = ({ logoAlt }) => {
                 </li>
               ))}
               <li className="nav-item ms-3">
-                {/* Selector para la Navbar principal (fondo oscuro -> texto blanco) */}
                 <LanguageSelector /> 
               </li>
             </ul>
@@ -81,7 +77,6 @@ const MainNavbar = ({ logoAlt }) => {
         </div>
       </nav>
 
-      {/* OFFCANVAS (MÓVIL) - FONDO CLARO Y TEXTO OSCURO */}
       <div 
         className="offcanvas offcanvas-start w-100" 
         tabIndex="-1" 
@@ -100,7 +95,6 @@ const MainNavbar = ({ logoAlt }) => {
             height="130" 
             className="mx-auto" 
           />
-          {/* Botón de cierre oscuro para fondo claro */}
           <button 
             type="button" 
             className="btn-close btn-close-dark text-reset position-absolute top-0 end-0 m-3"

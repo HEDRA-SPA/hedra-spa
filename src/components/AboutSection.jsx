@@ -1,37 +1,25 @@
-// src/components/AboutSection.jsx
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// ✨ Importamos motion
 import { motion } from 'framer-motion'; 
+import image from '../assets/hedra-logo.svg'
 
-const DENTAMETRICS_IMAGE_URL = 'https://lh3.googleusercontent.com/a/ACg8ocIjY6WiDqOuklF97RopiU3byiLL0njd5QHsB1f2WB4_G0rRheI=s360-c-no';
+const IMAGE_URL = image;
 
-const imageVariant = {
-  hidden: { opacity: 0, x: -100 }, // Empieza invisible y 100px a la izquierda
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut" 
-    } 
-  }, // Termina visible en su posición
-};
-
+// Para la animacion de entrada del texto
 const textVariant = {
-  hidden: { opacity: 0, x: 100 }, // Empieza invisible y 100px a la derecha
+  hidden: { opacity: 0, x: 100 }, 
   visible: { 
     opacity: 1, 
     x: 0, 
     transition: { 
       duration: 0.8, 
       ease: "easeOut",
-      delay: 0.2 // Agregamos un ligero retraso para que el texto aparezca después de la imagen
+      delay: 0.2 
     } 
-  }, // Termina visible en su posición
+  }, 
 };
 
+// Este compoenente es el "nosotros" en la pagina principal
 const AboutSection = () => {
   const { t } = useTranslation();
   return (
@@ -44,13 +32,8 @@ const AboutSection = () => {
       <div className="container">
         <div className="row align-items-center">
           
-          {/* 2. ENVOLVER IMAGEN con motion.div */}
-          <motion.div 
-            className="col-md-6 d-flex justify-content-center mb-5 mb-md-0" // mb-5 para móviles
-            variants={imageVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }} // Se activa cuando el 50% de la columna es visible
+          <div 
+            className="col-md-6 d-flex justify-content-center mb-5 mb-md-0" 
           >
             <div 
               style={{
@@ -62,7 +45,7 @@ const AboutSection = () => {
               }}
             >
               <img
-                src={DENTAMETRICS_IMAGE_URL}
+                src={IMAGE_URL}
                 className="img-fluid"
                 style={{ 
                     width: '100%', 
@@ -71,14 +54,14 @@ const AboutSection = () => {
                 }} 
               />
             </div>
-          </motion.div>
+          </div>
           
           <motion.div 
             className="col-md-6"
             variants={textVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }} // Se activa cuando el 50% de la columna es visible
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h2 className="mb-4" style={{ fontSize: '2.5rem' }}>
               {t('about.title')}

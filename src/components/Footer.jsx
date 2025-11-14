@@ -13,7 +13,6 @@ const Footer = () => {
             <div className="container">
                 <div className="row">
                     
-                    {/* Columna 1: Nombre del Spa y Descripción */}
                     <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                         <h3 className="mb-3" style={{ color: '#f7f6ef', fontWeight: '300', fontSize: '1.8rem' }}>
                             HEDRA SPA
@@ -21,7 +20,6 @@ const Footer = () => {
                         <p style={{ color: '#f7f6ef', fontSize: '0.9rem', lineHeight: '1.6' }}>
                             {t('footer.description')}
                         </p>
-                        {/* Íconos de redes sociales */}
                         <div className="d-flex mt-4">
                             <a href="#" className="me-3" aria-label="Facebook" style={{ color: '#f7f6ef' }}>
                                 <FaFacebookF size={20} />
@@ -32,14 +30,12 @@ const Footer = () => {
                         </div>
                     </div>
                     
-                    {/* Columna 2: Navegación Rápida */}
                     <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
                         <h5 className="text-uppercase mb-4" style={{ color: '#f7f6ef' }}>
                             {t('footer.navigation')}
                         </h5>
                         <ul className="list-unstyled">
     <li className="mb-2">
-        {/* Cambia la ruta a un objeto { pathname: '/', hash: '#nosotros' } */}
         <Link 
             to={{ pathname: '/', hash: '#nosotros' }} 
             className="text-decoration-none" 
@@ -69,7 +65,6 @@ const Footer = () => {
 </ul>
                     </div>
                     
-                    {/* Columna 3: Servicios */}
                     <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
                         <h5 className="text-uppercase mb-4" style={{ color: '#f7f6ef' }}>
                             {t('footer.services')}
@@ -88,7 +83,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Columna 4: Contacto */}
                     <div className="col-lg-3 col-md-6">
                         <h5 className="text-uppercase mb-4" style={{ color: '#f7f6ef' }}>
                             {t('footer.contact')}
@@ -102,7 +96,6 @@ const Footer = () => {
                     
                 </div>
                 
-                {/* Barra de copyright */}
                 <div className="text-center pt-4 mt-4 border-top" style={{ borderColor: '#f7f6ef !important' }}>
                     <p className="mb-0" style={{ color: '#f7f6ef', fontSize: '0.8rem', opacity: '0.8' }}>
                         {t('footer.copyright', { year: new Date().getFullYear() })}

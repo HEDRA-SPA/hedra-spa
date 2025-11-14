@@ -1,13 +1,15 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import '../ServicesSection.css';
-import './ServiceDetail.css';
+import '../styles//ServicesSection.css';
+import '../styles/ServiceDetail.css';
 import Footer from '../Footer';
 import { PopupButton } from 'react-calendly';
+import WhatsAppButton from '../utils/WhatsAppButton';
 import NavbarDefault from '../NavbarDefault';
+import photo_facial from '/photo_facial.jpeg';
+import photo_therapeutic from '/photo_therapeutic.jpg';
 
-// Solo Body Treatments y Facial Treatments
 const serviceKeyMap = {
   1: 'therapeutic',
   3: 'facial'
@@ -15,8 +17,8 @@ const serviceKeyMap = {
 
 // Imágenes asociadas
 const serviceImageMap = {
-  therapeutic: 'https://cdn.pixabay.com/photo/2014/03/11/22/56/new-year-285587_1280.jpg',
-  facial: 'https://images.pexels.com/photos/6663368/pexels-photo-6663368.jpeg'
+  therapeutic: photo_therapeutic,
+  facial: photo_facial
 };
 
   const calendlyUrl = 'https://calendly.com/hedraspa/30min'
@@ -50,7 +52,6 @@ return (
      <NavbarDefault />
 
       <div className="service-detail container">
-        {/* ... Encabezado y Descripción principal ... */}
         <div className="detail-header">
           <img src={service.imageUrl} alt={service.title} className="detail-image" />
           <div className="detail-content">
@@ -63,7 +64,7 @@ return (
         <h2 className="subservices-heading">{t('services.availableTreatments')}</h2>
 
         {Array.isArray(service.subServices) && service.subServices.length > 0 ? (
-          <div> {/* Contenedor para el grid de servicios y el botón */}
+          <div> 
             <div className="subservices-grid">
               {service.subServices.map((subService, index) => (
                 <div key={index} className="subservice-card">
@@ -75,24 +76,22 @@ return (
               ))}
             </div>
             
-            {/* 💡 BOTÓN DE CALENDLY CENTRADO AQUÍ */}
             <div className="text-center mt-5 mb-5"> 
               <PopupButton
                 url={calendlyUrl}
                 rootElement={document.getElementById("root")}
                 text={t("navbar.reserve_a_now") || "Reserva"}
-                // Asegúrate de que esta clase sea única si tienes otros botones 'book-btn'
                 className="fw-bold px-5 py-3 custom-calendly-btn" 
                 styles={{
                     borderRadius: "15px",
-                    backgroundColor: "#2D621E", // 💡 Sugerencia de color de tu FeatureCard
+                    backgroundColor: "#2D621E", 
                     color: "#ffffff",
-                    // Estilos para quitar el borde disparejo
                     outline: "none", 
                     boxShadow: "none"
                 }}
               />
             </div>
+<WhatsAppButton/>
           </div>
         ) : (
           <p className="no-subservices">{t('services.noTreatmentsAvailable')}</p>

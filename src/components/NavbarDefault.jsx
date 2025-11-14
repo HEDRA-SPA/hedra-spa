@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import LanguageSelector from './LanguageSelector'; 
+import LanguageSelector from './utils/LanguageSelector'; 
 
 import logoImage from '../assets/spa-logo-bgtp.svg';
 import logoImageCanvas from '/logo-icon.png'; 
@@ -37,7 +37,6 @@ const NavbarDefault = ({ logoAlt }) => {
   const offcanvasBgColor = '#D4DBC8';
   return (
     <>
-      {/* 1. NAVBAR PRINCIPAL (VERSIÓN SÓLIDA, DELGADA, NO-FIJA) */}
       <nav 
         className="navbar navbar-expand-lg py-0 shadow w-100 z-3"
         style={{ backgroundColor: '#e9e7d8ff', borderBottom: '1px solid #eee' }} 
@@ -68,7 +67,6 @@ const NavbarDefault = ({ logoAlt }) => {
                 </li>
               ))}
               <li className="nav-item ms-3">
-                {/* ✨ CAMBIO CLAVE: Usamos variant="light" y pasamos buttonStyle para asegurar el color negro */}
                 <LanguageSelector 
                   variant="light" 
                   buttonStyle={darkButtonStyle}
@@ -85,7 +83,7 @@ const NavbarDefault = ({ logoAlt }) => {
         tabIndex="-1" 
         id="offcanvasNavbarSolid"
         aria-labelledby="offcanvasNavbarSolidLabel"
-        style={{ backgroundColor: offcanvasBgColor }} // Fondo personalizado
+        style={{ backgroundColor: offcanvasBgColor }} 
       >
         <div className="offcanvas-header">
       
@@ -97,7 +95,7 @@ const NavbarDefault = ({ logoAlt }) => {
           />
           <button 
             type="button" 
-            className="btn-close text-reset position-absolute top-0 end-0 m-3" // Posicionamos el botón de cierre manualmente para dejar espacio al logo
+            className="btn-close text-reset position-absolute top-0 end-0 m-3" 
             data-bs-dismiss="offcanvas" 
             aria-label="Close"
           ></button>

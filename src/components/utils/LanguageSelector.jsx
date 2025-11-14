@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import mxFlag from '../assets/mx.png';
-import enFlag from '../assets/en.jpg';
+import mxFlag from '../../assets/mx.png';
+import enFlag from '../../assets/en.jpg';
 
-// Ahora aceptamos el prop 'buttonStyle' además de 'variant'
+// EL texto del componenete LanguageSelector puede presentarse oscuro o claro (se pasa un prop)
 function LanguageSelector({ variant = 'dark', buttonStyle = {} }) { 
   const { i18n } = useTranslation();
-
+  // Maneja dos contextos (locales, en.json y es,json )
   const languages = [
     { code: 'es', flag: mxFlag, label: 'ES' },
     { code: 'en', flag: enFlag, label: 'EN' }
@@ -15,31 +15,26 @@ function LanguageSelector({ variant = 'dark', buttonStyle = {} }) {
     i18n.changeLanguage(langCode);
   };
   
-  // Definimos el color base para el caso donde no se pase buttonStyle
   const baseColorValue = variant === 'light' ? 'black' : 'white';
-  
   const dropdownBackgroundColor = variant === 'light' ? 'white' : '#1c3b14';
   const dropdownItemTextColor = variant === 'light' ? 'black' : 'white';
 
-  // Fusionamos los estilos por defecto con el estilo pasado por prop
   const mergedButtonStyle = {
     textDecoration: 'none', 
     fontSize: '1rem', 
     fontWeight: '500', 
-    // Usamos la propiedad color, pero permitimos que buttonStyle la sobrescriba si se pasa
     color: baseColorValue, 
-    ...buttonStyle // Aplica estilos pasados aquí, ¡siempre tendrán prioridad!
+    ...buttonStyle 
   };
 
   return (
     <div className="dropdown">
       <button 
-        // Usamos la clase 'text-dark' o 'text-white' como respaldo
         className={`btn dropdown-toggle p-0 ${variant === 'light' ? 'text-dark' : 'text-white'}`} 
         type="button" 
         data-bs-toggle="dropdown" 
         aria-expanded="false"
-        style={mergedButtonStyle} // Aplicamos los estilos fusionados
+        style={mergedButtonStyle} 
       >
         <img
           src={i18n.language === 'es' ? mxFlag : enFlag}

@@ -1,7 +1,7 @@
-// ScrollToTop.jsx
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+// Este componenete hace que cada cambio de ruta haga scroll al tope de la página
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
@@ -18,7 +18,7 @@ const ScrollToTop = () => {
     }
 
     window.scrollTo(0, 0);
-  }, [pathname, hash]); // Ahora dependemos de 'hash' también
+  }, [pathname, hash]); 
 
   return null;
 };

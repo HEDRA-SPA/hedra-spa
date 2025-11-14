@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import './ServicesSection.css';
+import './styles/ServicesSection.css';
 import MinimalistCarousel from './MinimalistCarousel';
 
 const servicesData = [
   {
     id: 1, 
-    key: 'therapeutic', // Body Treatments
+    key: 'therapeutic', 
     imageUrl: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170',
   },
   {
     id: 3,
-    key: 'facial', // Facial Treatments
+    key: 'facial', 
     imageUrl: 'https://images.pexels.com/photos/6663567/pexels-photo-6663567.jpeg',
   },
 ];
