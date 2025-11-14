@@ -21,14 +21,14 @@ const ServicesSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="servicios" className="spa-services-section">
+    <section  className="spa-services-section">
       {/* Carrusel */}
       <div className="mb-5"> 
         <MinimalistCarousel/>
       </div>
 
       {/* Contenedor de tarjetas */}
-      <div className="container">
+      <div id="servicios" className="container">
         <div className="services-grid two-columns">
           {servicesData.map((service) => (
             <div key={service.id} className="service-card">

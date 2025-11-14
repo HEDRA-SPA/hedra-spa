@@ -16,7 +16,7 @@ const serviceKeyMap = {
 // Imágenes asociadas
 const serviceImageMap = {
   therapeutic: 'https://cdn.pixabay.com/photo/2014/03/11/22/56/new-year-285587_1280.jpg',
-  facial: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170'
+  facial: 'https://images.pexels.com/photos/6663368/pexels-photo-6663368.jpeg'
 };
 
   const calendlyUrl = 'https://calendly.com/hedraspa/30min'

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -37,22 +38,35 @@ const Footer = () => {
                             {t('footer.navigation')}
                         </h5>
                         <ul className="list-unstyled">
-                            <li className="mb-2">
-                                <a href="/#nosotros" className="text-decoration-none" style={{ color: '#f7f6ef' }}>
-                                    {t('footer.links.about')}
-                                </a>
-                            </li>
-                            <li className="mb-2">
-                                <a href="/#servicios" className="text-decoration-none" style={{ color: '#f7f6ef' }}>
-                                    {t('footer.links.services')}
-                                </a>
-                            </li>
-                            <li className="mb-2">
-                                <a href="/#contacto" className="text-decoration-none" style={{ color: '#f7f6ef' }}>
-                                    {t('footer.links.contact')}
-                                </a>
-                            </li>
-                        </ul>
+    <li className="mb-2">
+        {/* Cambia la ruta a un objeto { pathname: '/', hash: '#nosotros' } */}
+        <Link 
+            to={{ pathname: '/', hash: '#nosotros' }} 
+            className="text-decoration-none" 
+            style={{ color: '#f7f6ef' }}
+        >
+            {t('footer.links.about')}
+        </Link>
+    </li>
+    <li className="mb-2">
+        <Link 
+            to={{ pathname: '/', hash: '#servicios' }} 
+            className="text-decoration-none" 
+            style={{ color: '#f7f6ef' }}
+        >
+            {t('footer.links.services')}
+        </Link>
+    </li>
+    <li className="mb-2">
+        <Link 
+            to={{ pathname: '/', hash: '#contacto' }} 
+            className="text-decoration-none" 
+            style={{ color: '#f7f6ef' }}
+        >
+            {t('footer.links.contact')}
+        </Link>
+    </li>
+</ul>
                     </div>
                     
                     {/* Columna 3: Servicios */}

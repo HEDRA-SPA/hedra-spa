@@ -52,7 +52,7 @@ const Hero = ({ imageUrl }) => {
           right: 0,
           bottom: 0,
           backgroundColor: 'rgba(0, 0, 0, 0.4)',
-          zIndex: 1, // Cambiamos a 1
+          zIndex: 1, 
           pointerEvents: 'none',
         }}
       ></div>
@@ -65,7 +65,8 @@ const Hero = ({ imageUrl }) => {
           width: '100%',
           padding: '0 15px',
           maxWidth: '1140px',
-          margin: '0 auto'
+          margin: '0 auto',
+          border: 'none'
         }}
       >
         <h1 className="display-3 fw-bold mb-3 text-shadow-lg">{t('hero.title')}</h1>
@@ -77,9 +78,11 @@ const Hero = ({ imageUrl }) => {
           className="fw-bold px-4 py-2"
           styles={{
               borderRadius: "15px",
-              backgroundColor: "#F5F5F5",
+              color: "#000",
+              backgroundColor: "#d6c8b1ff",
               outline: "none",
-              boxShadow: "none"
+              boxShadow: "none",
+              border: "none"
           }}
         />
       </div>

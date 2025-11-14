@@ -4,10 +4,12 @@ import MainPage from './components/MainPage';
 import ServiceDetail from './components/pages/ServiceDetail';
 import WhatsAppReservation from './components/WhatsAppReservation';
 import CalendlyWidget from './components/CalendlyWidget';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         {/* Página principal */}
         <Route path="/" element={<MainPage />} />
