@@ -13,14 +13,14 @@ export default async function handler(req, res) {
       port: 587,
       secure: false,
       auth: {
-        user: process.env.SMTP_USER, // TU correo Gmail usado para enviar
-        pass: process.env.MAIL_PASS, // Contraseña de App
+        user: process.env.SMTP_USER, 
+        pass: process.env.MAIL_PASS, 
       },
     });
 
     await transporter.sendMail({
       from: `"Formulario Hedra SPA" <${process.env.SMTP_USER}>`,
-      to: "hedraspa.en@gmail.com", // 🔥 Tu correo fijo donde llegan los mensajes
+      to: "hedraspa.en@gmail.com", 
       subject: "Nuevo mensaje del formulario de contacto",
      html: `
 <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; color: #333; line-height: 1.7; background-color: #f8f9fa; padding: 0; margin: 0;">
@@ -108,8 +108,50 @@ export default async function handler(req, res) {
 </div>
 `,
 
-      replyTo: from_email, // 🔥 Si das clic en responder, se responde al cliente directamente
+      replyTo: from_email, 
     });
+await transporter.sendMail({
+  from: `"Hedra SPA" <${process.env.SMTP_USER}>`,
+  to: from_email,
+  subject: "🌿 Hedra SPA — Hemos recibido tu mensaje",
+  html: `
+  <div style="background: linear-gradient(135deg, #edf2f4, #cce3de); padding: 40px; font-family: Arial, sans-serif;">
+    <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+
+      <h2 style="text-align:center; color:#2a4d45; margin-bottom: 10px;">
+        🌿 Hedra SPA
+      </h2>
+      <p style="text-align:center; font-size: 18px; color:#4f4f4f;">
+        ¡Gracias por contactarnos, ${from_name}!
+      </p>
+
+      <p style="font-size: 16px; color:#555; line-height: 1.6; margin-top: 25px;">
+        Hemos recibido tu mensaje correctamente y nuestro equipo lo revisará cuanto antes.  
+        Nos encanta que te intereses en nuestros servicios y estaremos en contacto a la brevedad.
+      </p>
+
+      <div style="margin-top: 30px; padding: 20px; background:#f7faf9; border-left: 4px solid #8fb9a8; border-radius: 10px;">
+        <h3 style="margin: 0 0 10px 0; color:#2a4d45;">Resumen de tu mensaje:</h3>
+        <p style="margin: 5px 0;"><strong>Teléfono:</strong> ${phone}</p>
+        <p style="margin: 5px 0 15px 0;"><strong>Mensaje:</strong></p>
+        <p style="margin: 0; color:#555;">${message}</p>
+      </div>
+
+      <div style="text-align:center; margin-top: 30px;">
+        <a href="https://hedra-spa.vercel.app" 
+        style="background:#2a4d45; color:#fff; padding: 12px 25px; text-decoration:none; border-radius: 6px; font-size: 16px;">
+          Visitar sitio web
+        </a>
+      </div>
+
+      <p style="font-size: 13px; color:#999; text-align:center; margin-top: 35px;">
+        Este es un correo automático, por favor no respondas directamente a este mensaje.
+      </p>
+
+    </div>
+  </div>
+  `,
+});
 
     res.status(200).json({ success: true });
   } catch (error) {
