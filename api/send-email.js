@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 module.exports = async function handler(req, res) {
   // Configurar CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,14 +19,19 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    console.log('Iniciando proceso de envío de email...');
+    console.log('=== INICIO DEL PROCESO ===');
+    console.log('Body recibido:', JSON.stringify(req.body, null, 2));
     
     // Verificar variables de entorno
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error('Variables de entorno no configuradas correctamente');
+      console.error('ERROR: Variables de entorno no configuradas');
+      return res.status(500).json({ 
+        success: false, 
+        message: 'Error de configuración del servidor. Contacta al administrador.' 
+      });
     }
 
-    // Extraer datos del formulario (usando los mismos nombres que en el form)
+    // Extraer datos del formulario
     const { from_name, from_email, phone, message } = req.body;
     
     // Validar campos requeridos
@@ -44,9 +51,6 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    console.log('Importando nodemailer...');
-    const nodemailer = require('nodemailer');
-    
     console.log('Configurando transporter...');
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -56,23 +60,19 @@ module.exports = async function handler(req, res) {
       },
     });
 
-    console.log('Preparando contenido del email...');
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Cambia a 'hedraspa@gmail.com' si quieres
+      to: process.env.EMAIL_USER,
       subject: `Nuevo mensaje de contacto de ${from_name}`,
       html: `
         <div style="font-family: 'Playfair Display', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f7f6ef;">
           
-          <!-- Header -->
           <div style="background-color: #2d621e; padding: 30px 20px; text-align: center; border-radius: 10px 10px 0 0;">
             <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 400;">Nuevo Mensaje de Contacto</h1>
           </div>
           
-          <!-- Contenido -->
           <div style="background-color: white; padding: 40px 30px; border-radius: 0 0 10px 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
             
-            <!-- Información del Cliente -->
             <h2 style="color: #2d621e; font-size: 20px; margin-top: 0; padding-bottom: 10px; border-bottom: 2px solid #2d621e;">
               Información del Cliente
             </h2>
@@ -110,7 +110,6 @@ module.exports = async function handler(req, res) {
               ` : ''}
             </table>
             
-            <!-- Mensaje -->
             <h2 style="color: #2d621e; font-size: 20px; margin-top: 30px; padding-bottom: 10px; border-bottom: 2px solid #2d621e;">
               Mensaje
             </h2>
@@ -119,7 +118,6 @@ module.exports = async function handler(req, res) {
               <p style="margin: 0; line-height: 1.7; color: #333; white-space: pre-wrap;">${message}</p>
             </div>
             
-            <!-- Footer -->
             <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #f7f6ef; border-radius: 8px;">
               <p style="margin: 0; font-size: 13px; color: #666;">
                 📅 Mensaje recibido el ${new Date().toLocaleString('es-MX', { 
@@ -137,24 +135,25 @@ module.exports = async function handler(req, res) {
           
         </div>
       `,
-      // Email de respuesta automática
       replyTo: from_email
     };
 
     console.log('Enviando email...');
     await transporter.sendMail(mailOptions);
+    console.log('✅ Email enviado exitosamente');
     
-    console.log('Email enviado exitosamente');
-    res.status(200).json({ 
+    return res.status(200).json({ 
       success: true, 
       message: 'Mensaje enviado correctamente. Gracias por contactarnos.'
     });
     
   } catch (error) {
-    console.error('ERROR al enviar email:', error);
-    res.status(500).json({ 
+    console.error('❌ ERROR:', error);
+    
+    return res.status(500).json({ 
       success: false, 
-      message: 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo más tarde.' 
+      message: 'Error al enviar el mensaje. Por favor intenta nuevamente.',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 };
