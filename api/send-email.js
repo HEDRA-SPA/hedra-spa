@@ -20,14 +20,13 @@ module.exports = async function handler(req, res) {
 
   try {
     console.log('=== INICIO DEL PROCESO ===');
-    console.log('Body recibido:', JSON.stringify(req.body, null, 2));
     
     // Verificar variables de entorno
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       console.error('ERROR: Variables de entorno no configuradas');
       return res.status(500).json({ 
         success: false, 
-        message: 'Error de configuración del servidor. Contacta al administrador.' 
+        message: 'Error de configuración del servidor' 
       });
     }
 
@@ -52,12 +51,32 @@ module.exports = async function handler(req, res) {
     }
 
     console.log('Configurando transporter...');
+    
+    // IMPORTANTE: Usar port 587 con secure: false para Vercel
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false, // true para 465, false para otros puertos
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      tls: {
+        rejectUnauthorized: false
+      }
+    });
+
+    // Verificar conexión ANTES de enviar
+    await new Promise((resolve, reject) => {
+      transporter.verify(function (error, success) {
+        if (error) {
+          console.error('Error de verificación:', error);
+          reject(error);
+        } else {
+          console.log('Servidor listo para enviar mensajes');
+          resolve(success);
+        }
+      });
     });
 
     const mailOptions = {
@@ -139,8 +158,19 @@ module.exports = async function handler(req, res) {
     };
 
     console.log('Enviando email...');
-    await transporter.sendMail(mailOptions);
-    console.log('✅ Email enviado exitosamente');
+    
+    // Envolver en Promise para asegurar que espera
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error('Error al enviar:', error);
+          reject(error);
+        } else {
+          console.log('✅ Email enviado:', info.response);
+          resolve(info);
+        }
+      });
+    });
     
     return res.status(200).json({ 
       success: true, 
@@ -153,7 +183,7 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ 
       success: false, 
       message: 'Error al enviar el mensaje. Por favor intenta nuevamente.',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      error: error.message
     });
   }
 };
