@@ -284,6 +284,8 @@ const INPUT_BG_COLOR = '#f4f3ebff';
     });
 
     try {
+      console.log('Enviando datos:', formData);
+      
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -292,7 +294,20 @@ const INPUT_BG_COLOR = '#f4f3ebff';
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      console.log('Response status:', response.status);
+      
+      // Intentar leer la respuesta como texto primero
+      const textResponse = await response.text();
+      console.log('Response text:', textResponse);
+      
+      // Intentar parsear como JSON
+      let data;
+      try {
+        data = JSON.parse(textResponse);
+      } catch (parseError) {
+        console.error('Error parseando JSON:', parseError);
+        throw new Error(`Error del servidor: ${textResponse.substring(0, 100)}`);
+      }
 
       if (data.success) {
         toast.dismiss(loadingToast);
@@ -318,12 +333,12 @@ const INPUT_BG_COLOR = '#f4f3ebff';
           message: ''
         });
       } else {
-        throw new Error(data.message);
+        throw new Error(data.message || 'Error desconocido');
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error completo:', error);
       toast.dismiss(loadingToast);
-      toast.error('Ocurrió un error al enviar el mensaje. Por favor, intenta nuevamente.', {
+      toast.error(`Ocurrió un error: ${error.message}. Por favor, intenta nuevamente.`, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
