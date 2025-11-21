@@ -1,33 +1,42 @@
-# React + Vite
+# Documentación
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este documento describe la estructura y los componentes clave del proyecto HedraSPA, incluyendo su organización de código fuente, funciones serverless y archivos de configuración.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 1. Estructura de Directorios Principal
 
-## React Compiler
+| Directorio | Descripción |
+| :--- | :--- |
+| **`/api`** | Contiene las **funciones *serverless*** (servidor sin estado) desplegadas en Vercel. Estas funciones son utilizadas para la lógica de *backend*, incluyendo el **envío de correos** (para notificaciones de Hedra) y la **confirmación de procesos/servicios** para el cliente. |
+| **`/node_modules`** | Directorio generado automáticamente que almacena todos los **módulos de JavaScript** necesarios, instalados a partir de `package.json`. **Este directorio debe ser ignorado por Git.** |
+| **`/public`** | Directorio para **archivos estáticos** que se sirven directamente (imágenes, fuentes, `favicon.ico`). |
+| **`/src`** | Contiene el **código fuente** principal de la aplicación frontend. |
+| **`.gitignore`** | Archivo de configuración que especifica qué archivos y carpetas **no deben ser versionados** por Git (ej. `/node_modules`, archivos `.env`). |
+| **`package.json`** | Archivo de metadatos principal que define las **dependencias** del proyecto y los **scripts** de ejecución (`start`, `build`, etc.). |
+| **`vercel.json`** | Archivo de **configuración de despliegue en Vercel** para definir *rewrites*, *headers* y la configuración de las funciones *serverless*. |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 2. Detalle del Código Fuente (`/src`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El código de la aplicación se organiza internamente en el directorio `/src`:
 
-## First Version
-![captura1](docs/cap1.png)
+| Subdirectorio | Contenido y Propósito |
+| :--- | :--- |
+| **`/src/components`** | Almacena los **componentes de React** reutilizables que construyen la interfaz de usuario. |
+| &nbsp;&nbsp;&nbsp;&nbsp; - `ServiceDetail` | Componente específico para la visualización de los **detalles de un servicio**. |
+| **`/src/styles`** | Contiene los **archivos de estilo** (CSS, SCSS, etc.). Aquí se definen los estilos globales, variables de diseño y archivos específicos de componentes. |
+| **`/src/locales`** | Directorio clave para la **Internacionalización (i18n)**. Contiene los textos de la aplicación en formato **JSON** para los idiomas soportados, actualmente **Español (es)** e **Inglés (en)**. |
+| **`/src/hooks`** | Almacena **hooks personalizados** para encapsular y reutilizar lógica de estado o efectos secundarios. |
+| **`/src/utils`** | Contiene **funciones de utilidad** misceláneas (helpers de formateo, validaciones, lógica auxiliar de API). |
+| **`/src/pages`** | Contiene los componentes de nivel superior que representan las **vistas o páginas** principales de la aplicación. |
 
-![captura1](docs/cap2.png)
+---
 
-![captura1](docs/cap3.png)
 
-![captura1](docs/cap4.png)
+## 4. Repositorio de Código
 
-![captura1](docs/cap5.png)
+El código fuente.
 
-![captura1](docs/cap6.png)
-
-![captura1](docs/cap7.png)
-
-Agregado el soporte de idiomas
+[https://github.com/HEDRA-SPA/hedra-spa](https://github.com/HEDRA-SPA/hedra-spa)
