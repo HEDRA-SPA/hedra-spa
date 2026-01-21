@@ -12,7 +12,7 @@
     "select": "Seleccionar idioma"
   },
   "hero": {
-    "title": "Bienvenido a HEDRA SPA",
+    "title": "Bienvenido a AUREN SPA",
     "subtitle": "Descubre tu calma más profunda"
   },
   "about": {
@@ -149,16 +149,16 @@
   },
   "features": {
     "technology": {
-      "title": "Rituales del Cuerpo",
-      "text": "Cada sesión es más que un masaje; es un ritual diseñado para liberar la tensión profunda. Elige terapias de relajación exclusivas, guiadas por manos expertas, para un bienestar total."
+      "title": "Contacto corporal",
+      "text": "Movimientos envolventes y suaves técnicas que liberan tensiones, relajan profundamente el cuerpo y despiertan una sensación total de bienestar."
     },
     "locations": {
-      "title": "El Arte de la Piel",
-      "text": "Nuestros rituales faciales van más allá de lo superficial. Logramos una hidratación profunda y una textura impecable que se siente tan vital como se ve."
+      "title": "Experiencia Auren",
+      "text": "Un ritual donde la paz, calma y la técnica se fusionan para regalarte un momento de conexión, armonía y renovación."
     },
     "medical": {
-      "title": "Fluir en Calma",
-      "text": "Sumérgete en el abrazo cálido de nuestro jacuzzi.  Diseñado para relajar tus músculos y despejar tu mente, marcando el inicio o el cierre perfecto de tu experiencia."
+      "title": "El arte de la piel",
+      "text": "Tratamientos faciales y corporales que cuidan, nutren y realzan tu piel, dejándola visiblemente luminosa, equilibrada."
     }
   },
   "contact": {

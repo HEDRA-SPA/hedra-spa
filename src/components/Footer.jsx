@@ -39,7 +39,7 @@ const Footer = () => {
                     
                     <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                         <h3 className="mb-3" style={{ color: '#f7f6ef', fontWeight: '300', fontSize: '1.8rem' }}>
-                            HEDRA SPA
+                            AUREN SPA
                         </h3>
                         <p style={{ color: '#f7f6ef', fontSize: '0.9rem', lineHeight: '1.6' }}>
                             {t('footer.description')}
