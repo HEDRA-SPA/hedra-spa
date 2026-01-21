@@ -17,9 +17,9 @@
   },
   "about": {
     "title": "OUR SPA",
-    "description": "Hedra Spa is a sanctuary for wellness and relaxation where your body and mind find balance.",
+    "description": "Auren Spa is a sanctuary for wellness and relaxation where your body and mind find balance.",
     "mainText": "Enjoy our personalized treatments, from therapeutic massages to facial and body care, in a calm and welcoming environment. Our goal is to provide you with a deep relaxation experience that renews your energy and vitality.",
-    "secondaryText": "Come and discover your Hedra moment! 🌿"
+    "secondaryText": "Come and discover your Auren moment! 🌿"
   },
   "services": {
     "title": "SPA SERVICES",
@@ -36,52 +36,28 @@
         "description": "Our therapeutic massages help to relax muscles, relieve stress, and improve circulation.",
         "subServices": [
           {
-            "title": "Body Harmony",
+            "title": "Relaxing Massage",
             "duration": "60 min",
-            "price": "$85",
-            "description": "Indulge in a ritual of serenity where gentle Swedish techniques dissolve tension and renew vital energy. Warm, deep-penetrating obsidian stones awaken circulation, while aromatherapy and essential oils caress the skin, immersing you in a state of total harmony."
+            "price": "$70 USD",
+            "description": "Gentle, relaxing techniques that reduce stress and tension while improving blood circulation. Includes aromatherapy and tea."
           },
           {
-            "title": "Active Revitalization",
-            "duration": "90 min",
-            "price": "$120",
-            "description": "Enjoy a combination of restorative techniques designed for active individuals. Relax with a cranial massage that stimulates circulation. The treatment continues with gentle stretching and deep movements, restoring the body's balance and releasing tension from fatigued muscles."
+            "title": "Swedish Massage",
+            "duration": "60 min",
+            "price": "$90 USD",
+            "description": "Deep muscle relaxation through decontracting techniques. Includes aromatherapy and tea."
           },
           {
-            "title": "Customized Equilibrium",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "A wellness journey intuitively created with your therapist, where every technique is tailored to your energetic and physical needs. You will relieve tension and stress in specific areas while your entire body is harmonized, awakening a profound sense of balance, relaxation, and inner renewal."
+            "title": "Sports Massage",
+            "duration": "60 min",
+            "price": "$75",
+            "description": "A deep, intense massage that relieves muscle fatigue caused by physical exertion, helps improve injuries, and promotes relaxation. Includes aromatherapy and tea."
           },
           {
-            "title": "Connection Ritual",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Allow yourself to be enveloped in a journey of calm and harmony. Conscious breathing paves the way to serenity, while an aromatic massage with warm oils awakens the senses and renews your energy. A warm wrap seals the experience, melding body and soul into a deep sensation of inner peace."
-          },
-          {
-            "title": "Vital Balance",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Begin your experience with a refreshing cleanse and exfoliation that awakens and revitalizes your feet. Continue with a nourishing and therapeutic massage, accompanied by work on specific points, which releases built-up tension and restores the balance of body and energy. This ritual connects your feet to the earth, providing a profound sense of well-being, lightness, and integral harmony."
-          },
-          {
-            "title": "Sanctuary of Harmony",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Immerse yourselves in a shared serenity experience with a 60-minute massage that harmonizes body and mind. Then, enjoy an intimate and cozy space with strawberries and a glass of Prosecco, where calm and connection flow naturally. Conclude with a jacuzzi bath that renews your energy and celebrates your union."
-          },
-          {
-            "title": "Inner Glow",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Begin your journey to inner harmony with conscious breathing that awakens the senses and balances your energy. A full-body massage relaxes every muscle and prepares the skin for a gentle exfoliation that renews and revitalizes. The experience culminates with a soothing hydrating massage that seals in luminosity, wrapping you in a sensation of well-being and profound serenity."
-          },
-          {
-            "title": "Silken Aura",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Immerse yourself in a ritual of renewal that nourishes your skin and your energy. It begins with a delicate facial that awakens your natural luminosity and balances facial vitality, followed by a relaxing Swedish massage that releases tension, activates circulation, and harmonizes body and mind. A deep exfoliation eliminates impurities and reveals soft, luminous, and purified skin, leaving a delicate 'bridal veil' effect that symbolizes freshness and purity. The ritual culminates with a nourishing body wrap that tones, reduces inflammation, and softens lines and spots, promoting deep well-being, inner serenity, and a feeling of integral renewal that embraces body, mind, and spirit."
+            "title": "Hot Stone Massage",
+            "duration": "60 min",
+            "price": "$75",
+            "description": "The heat of the stones deeply relaxes the most fatigued areas of the body and contributes to energetic balance thanks to the properties of obsidian. Includes aromatherapy and tea."
           }
         ]
       },
@@ -90,22 +66,16 @@
         "description": "Exclusive experience of premium treatments inspired by ancient rituals and modern techniques.",
         "subServices": [
       {
-        "title": "Deep Nourishment",
-        "duration": "60 min",
-        "price": "$75",
-        "description": "A deep awakening for the skin and energy. Hydrating serums and delicate massages nourish every layer, leaving your face revitalized, luminous, and in total harmony."
+        "title": "Hydrating Facial",
+        "duration": "",
+        "price": "$36,1 USD",
+        "description": "Facial treatment that purifies and revitalizes the skin through deep cleansing, intense hydration, and antioxidant protection. Includes aromatherapy, clay mask application, concentrated serums, and a relaxing neck massage for fresh, balanced skin."
       },
       {
-        "title": "Facial Elixir",
-        "duration": "90 min",
-        "price": "$130",
-        "description": "A deep relaxation ritual that infuses the skin. We use a selection of elite serums and masks to regenerate and bestow an incomparable glow upon your face."
-      },
-      {
-        "title": "Jade Gua Sha",
-        "duration": "90 min",
-        "price": "$130",
-        "description": "A Gua Sha massage that infuses energy and calm. Specific formulas and premium masks balance every layer of the skin, leaving the face profoundly harmonized, refreshed, and radiant."
+        "title": "Auren Facial",
+        "duration": "",
+        "price": "$47,2 USD",
+        "description": "Auren’s most complete facial experience. Combines a gentle detox massage, deep cleansing, and antioxidant hydration. Includes a collagen mask with gold powder, a redensifying treatment for neck and décolleté, enveloping aromatherapy, and marine collagen for firm, radiant skin."
       }
     ]
       },
@@ -114,22 +84,16 @@
     "description": "Care for your skin with natural products and professional techniques that restore its radiance.",
     "subServices": [
       {
-        "title": "Deep Nourishment",
-        "duration": "60 min",
-        "price": "$75",
-        "description": "A deep awakening for the skin and energy. Hydrating serums and delicate massages nourish every layer, leaving your face revitalized, luminous, and in total harmony."
+        "title": "Hydrating Facial",
+        "duration": "",
+        "price": "$36,1 USD",
+        "description": "Facial treatment that purifies and revitalizes the skin through deep cleansing, intense hydration, and antioxidant protection. Includes aromatherapy, clay mask application, concentrated serums, and a relaxing neck massage for fresh, balanced skin."
       },
       {
-        "title": "Facial Elixir",
-        "duration": "90 min",
-        "price": "$130",
-        "description": "A deep relaxation ritual that infuses the skin. We use a selection of elite serums and masks to regenerate and bestow an incomparable glow upon your face."
-      },
-      {
-        "title": "Jade Gua Sha",
-        "duration": "90 min",
-        "price": "$130",
-        "description": "A Gua Sha massage that infuses energy and calm. Specific formulas and premium masks balance every layer of the skin, leaving the face profoundly harmonized, refreshed, and radiant."
+        "title": "Auren Facial",
+        "duration": "",
+        "price": "$47,2 USD",
+        "description": "Auren’s most complete facial experience. Combines a gentle detox massage, deep cleansing, and antioxidant hydration. Includes a collagen mask with gold powder, a redensifying treatment for neck and décolleté, enveloping aromatherapy, and marine collagen for firm, radiant skin."
       }
     ]
   },

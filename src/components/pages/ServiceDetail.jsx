@@ -7,7 +7,7 @@ import Footer from '../Footer';
 import { PopupButton } from 'react-calendly';
 import WhatsAppButton from '../utils/WhatsAppButton';
 import NavbarDefault from '../NavbarDefault';
-import photo_facial from '/photo_facial.jpeg';
+import photo_facial from '/photo_facial_2.jpg';
 import photo_therapeutic from '/photo_therapeutic.jpg';
 
 const serviceImageMap = {

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './styles/ServicesSection.css';
 import MinimalistCarousel from './MinimalistCarousel';
-import photo_therapeutic from '/photo_carrousel_2.avif';
-import photo_facial_2 from '/photo_facial_2.jpeg';
+import photo_therapeutic from '/photo_therapeutic.jpg';
+import photo_facial_2 from '/photo_facial_2.jpg';
 
 
 const languageSlugMap = {

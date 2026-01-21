@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import photo_carrousel_1 from '/photo_carrousel_1.jpeg';
-import photo_carrousel_2 from '/photo_carrousel_2.avif';
-import photo_carrousel_3 from '/photo_carrousel_3.jpeg';
-import photo_carrousel_4 from '/photo_carrousel_4.jpeg';
+import photo_carrousel_1 from '/photo_carrousel_1.jpg';
+import photo_carrousel_2 from '/photo_carrousel_2.jpg';
+import photo_carrousel_3 from '/photo_carrousel_3.jpg';
+import photo_carrousel_4 from '/photo_therapeutic.jpg';
 
 const IMAGES = [
     photo_carrousel_1,

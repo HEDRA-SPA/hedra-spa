@@ -17,9 +17,9 @@
   },
   "about": {
     "title": "NUESTRO SPA",
-    "description": "Hedra Spa es un refugio de bienestar y relajación donde tu cuerpo y mente encuentran equilibrio.",
+    "description": "Auren Spa es un refugio de bienestar y relajación donde tu cuerpo y mente encuentran equilibrio.",
     "mainText": "Disfruta de nuestros tratamientos personalizados en un ambiente tranquilo y acogedor. Nuestro objetivo es brindarte una experiencia de relajación profunda que renueve tu energía y vitalidad.",
-    "secondaryText": "¡Ven y descubre tu momento Hedra! 🌿"
+    "secondaryText": "¡Ven y descubre tu momento Auren! 🌿"
   },
   "services": {
     "title": "SERVICIOS DE SPA",
@@ -36,52 +36,28 @@
         "description": "Nuestros masajes terapéuticos ayudan a relajar músculos, aliviar el estrés y mejorar la circulación.",
         "subServices": [
           {
-            "title": "Armonia Corporal",
+            "title": "Masaje relajante",
             "duration": "60 min",
-            "price": "$85",
-            "description": "Déjate envolver por un ritual de serenidad donde suaves técnicas suecas disuelven la tensión y renuevan la energía vital. Las piedras de obsidiana, cálidas y profundas, despiertan la circulación mientras la aromaterapia y los aceites esenciales acarician la piel, sumergiéndote en un estado de armonía total."
+            "price": "$1260 MXN",
+            "description": "Suaves maniobras relajantes que reducen el estrés, tensión y mejora la circulación sanguínea. Incluye aromaterapia y té."
           },
           {
-            "title": "Revitalización Activa",
-            "duration": "90 min",
-            "price": "$120",
-            "description": "Disfruta de una combinación de técnicas restaurativas diseñadas para personas activas. Relájate con un masaje craneal que estimula la circulación. El tratamiento continúa con estiramientos suaves y movimientos profundos, restaurando el equilibrio del cuerpo y liberando la tensión acumulada en los músculos fatigados."
+            "title": "Masaje sueco",
+            "duration": "60 min",
+            "price": "$1620 MXN",
+            "description": "Relajación muscular profunda, mediante manipulaciones descontracturantes. Incluye aromaterapia y té. Incluye aromaterapia y té."
           },
           {
-            "title": "Equilibrio a medida",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Un viaje de bienestar creado intuitivamente junto a tu terapeuta, donde cada técnica se adapta a tus necesidades energéticas y físicas. Aliviarás la tensión y el estrés en áreas específicas mientras todo tu cuerpo se armoniza, despertando una profunda sensación de equilibrio, relajación y renovación interior."
+            "title": "Masaje deportivo",
+            "duration": "60 min",
+            "price": "$1350 MXN",
+            "description": "Masaje profundo e intenso, elimina la fatiga muscular causada por esfuerzo, mejora lesiones y relaja. Incluye aromaterapia y té."
           },
           {
-            "title": "Ritual de conexión",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Déjate envolver en un viaje de calma y armonía. La respiración consciente abre el camino hacia la serenidad, mientras un masaje aromático con aceites tibios despierta los sentidos y renueva la energía. Un envoltorio cálido sella la experiencia, fundiendo cuerpo y alma en una profunda sensación de paz interior."
-          },
-            {
-            "title": "Equilibrio vital",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Comienza tu experiencia con una limpieza y exfoliación refrescante que despierta y revitaliza tus pies. Continúa con un masaje nutritivo y terapéutico, acompañado de trabajo en puntos específicos, que libera la tensión acumulada y restablece el equilibrio del cuerpo y la energía. Este ritual conecta tus pies con la tierra, brindando una sensación profunda de bienestar, ligereza y armonía integral."
-          },
-          {
-            "title": "Santuario de armonía",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Sumérjanse en una experiencia de serenidad compartida con un masaje de 60 minutos que armoniza cuerpo y mente. Luego, disfruten de un espacio íntimo y acogedor con fresas y una copa de prosecco, donde la calma y la conexión fluyen naturalmente. Finalicen con un baño en jacuzzi que renueva la energía y celebra la unión."
-          },
-           {
-            "title": "Resplandor",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Inicia tu viaje hacia la armonía interior con respiración consciente que despierta los sentidos y equilibra la energía. Un masaje corporal relaja cada músculo y prepara la piel para una delicada exfoliación que renueva y revitaliza. La experiencia culmina con un suave masaje hidratante que sella la luminosidad, envolviéndote en una sensación de bienestar y serenidad profunda."
-          },
-           {
-            "title": "Aura de seda",
-            "duration": "45 min",
-            "price": "$95",
-            "description": "Sumérgete en un ritual de renovación que nutre tu piel y tu energía. Comienza con un facial delicado que despierta la luminosidad natural y equilibra la vitalidad del rostro, seguido de un masaje sueco relajante que libera tensiones, activa la circulación y armoniza cuerpo y mente. La exfoliación profunda elimina impurezas y revela una piel suave, luminosa y purificada, dejando un delicado “velo de novia” que simboliza frescura y pureza. El ritual culmina con una envoltura corporal nutritiva, que tonifica, desinflama y suaviza líneas y manchas, promoviendo un bienestar profundo, serenidad interior y una sensación de renovación integral que abraza cuerpo, mente y espíritu."
+            "title": "Piedras calientes",
+            "duration": "60 min",
+            "price": "$1350 MXN",
+            "description": "El calor de las piedras relaja profundamente las zonas más fatigadas del cuerpo y contribuye al equilibrio energético gracias a las propiedades de la obsidiana. Incluye aromaterapia y té."
           }
         ]
       },
@@ -108,22 +84,16 @@
         "description": "Cuida tu piel con productos naturales y técnicas profesionales que restauran su luminosidad.",
         "subServices": [
           {
-            "title": "Nutrición profunda",
-            "duration": "60 min",
-            "price": "$75",
-            "description": "Un despertar profundo para la piel y la energía. Sueros hidratantes y masajes delicados nutren cada capa, dejando tu rostro revitalizado, luminoso y en total armonía."
+            "title": "Facial hidratante",
+            "duration": "",
+            "price": "$650 MXN",
+            "description": "Tratamiento facial que purifica y revitaliza la piel mediante limpieza profunda, hidratación intensa y protección antioxidante. Incluye aromaterapia, aplicación de arcilla, sueros concentrados y un relajante masaje de cuello para una piel fresca y equilibrada."
           },
           {
-            "title": "Elixir facial",
-            "duration": "90 min",
-            "price": "$130",
-            "description": "Un ritual de profunda relajación que infunde la piel. Utilizamos una selección de sueros y mascarillas de élite para regenerar y conferir a su rostro un brillo incomparable."
-          },
-            {
-            "title": "Jade Gua Sha",
-            "duration": "90 min",
-            "price": "$130",
-            "description": "Un masaje Gua Sha que infunde energía y calma. Fórmulas específicas y mascarillas premium equilibran cada capa de la piel, dejando el rostro profundamente armonizado, fresco y radiante."
+            "title": "Facial Auren ",
+            "duration": "",
+            "price": "$850 MXN",
+            "description": "La experiencia facial más completa de Auren. Combina suave masaje détox, limpieza profunda e hidratación antioxidante. Incluye mascarilla de colágeno con polvo de oro, tratamiento redensificador para cuello y escote, aromaterapia envolvente y colágeno marino para una piel firme y luminosa."
           }
         ]
       },

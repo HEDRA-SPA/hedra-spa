@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './utils/LanguageSelector'; 
 
-import logoImage from '../assets/spa-logo-bgtp.svg';
+import logoImage from '../assets/spa-logo-bgtp.png';
 import logoImageCanvas from '/logo-icon.png'; 
 
 const NavbarDefault = ({ logoAlt }) => { 
