@@ -8,6 +8,14 @@ export default async function handler(req, res) {
   try {
     const { from_name, from_email, phone, message } = req.body;
 
+    // Validar que los campos requeridos existan
+    if (!from_name || !from_email || !message) {
+      return res.status(400).json({ 
+        success: false, 
+        message: "Faltan campos requeridos" 
+      });
+    }
+
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
@@ -18,11 +26,12 @@ export default async function handler(req, res) {
       },
     });
 
-    await transporter.sendMail({
-      from: `"Formulario Hedra SPA" <${process.env.SMTP_USER}>`,
-      to: "hedraspa.en@gmail.com", 
-      subject: "Nuevo mensaje del formulario de contacto",
-     html: `
+    // CORREO 1: Notificación al equipo de Auren SPA
+    const emailToTeam = await transporter.sendMail({
+      from: `"Formulario Auren SPA" <${process.env.SMTP_USER}>`,
+      to: "hedraspa@gmail.com", // Tu correo donde recibes los mensajes
+      subject: "🌿 Nuevo mensaje del formulario de contacto - Auren SPA",
+      html: `
 <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; color: #333; line-height: 1.7; background-color: #f8f9fa; padding: 0; margin: 0;">
 
   <div style="width: 100%; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden;">
@@ -30,7 +39,7 @@ export default async function handler(req, res) {
     <!-- HEADER -->
     <div style="background: linear-gradient(135deg, #a9c7a1ff 0%, #8bb28a 100%); padding: 30px 40px; text-align: center; border-bottom: 3px solid #99b691;">
       <h1 style="margin: 0; font-size: 28px; color: #2d4a2d; font-weight: 700;">¡Nuevo Mensaje de Contacto!</h1>
-      <p style="margin: 10px 0 0; font-size: 16px; color: #3a5a3a;">HEDRA SPA - Centro de Bienestar</p>
+      <p style="margin: 10px 0 0; font-size: 16px; color: #3a5a3a;">AUREN SPA - Centro de Bienestar</p>
     </div>
 
     <!-- CUERPO -->
@@ -74,7 +83,7 @@ export default async function handler(req, res) {
 
             <p style="margin: 0; padding: 10px 15px; background-color: #fff; border-radius: 6px; border-left: 3px solid #a9c7a1;">
               <strong style="color: #2d4a2d;">Teléfono:</strong> 
-              <span style="font-weight: 600;">${phone}</span>
+              <span style="font-weight: 600;">${phone || 'No proporcionado'}</span>
             </p>
           </div>
 
@@ -99,7 +108,7 @@ export default async function handler(req, res) {
         <a href="mailto:${from_email}" style="color: #a9c7a1; font-weight: 700; text-decoration: none;">${from_email}</a>
       </p>
       <p style="margin: 8px 0 0; font-size: 14px; color: #c8e6c8; opacity: 0.9;">
-        Este es un correo automático. © 2025 HEDRA SPA - Todos los derechos reservados.
+        Este es un correo automático. © 2025 AUREN SPA - Todos los derechos reservados.
       </p>
     </div>
 
@@ -107,19 +116,22 @@ export default async function handler(req, res) {
 
 </div>
 `,
-
       replyTo: from_email, 
     });
-await transporter.sendMail({
-  from: `"Hedra SPA" <${process.env.SMTP_USER}>`,
-  to: from_email,
-  subject: "🌿 Hedra SPA — Hemos recibido tu mensaje",
-  html: `
+
+    console.log('Correo al equipo enviado:', emailToTeam.messageId);
+
+    // CORREO 2: Confirmación al cliente
+    const emailToClient = await transporter.sendMail({
+      from: `"Auren SPA" <${process.env.SMTP_USER}>`,
+      to: from_email,
+      subject: "🌿 Auren SPA — Hemos recibido tu mensaje",
+      html: `
   <div style="background: linear-gradient(135deg, #edf2f4, #cce3de); padding: 40px; font-family: Arial, sans-serif;">
     <div style="max-width: 600px; margin: auto; background: #ffffff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
 
       <h2 style="text-align:center; color:#2a4d45; margin-bottom: 10px;">
-        🌿 Hedra SPA
+        🌿 Auren SPA
       </h2>
       <p style="text-align:center; font-size: 18px; color:#4f4f4f;">
         ¡Gracias por contactarnos, ${from_name}!
@@ -132,14 +144,14 @@ await transporter.sendMail({
 
       <div style="margin-top: 30px; padding: 20px; background:#f7faf9; border-left: 4px solid #8fb9a8; border-radius: 10px;">
         <h3 style="margin: 0 0 10px 0; color:#2a4d45;">Resumen de tu mensaje:</h3>
-        <p style="margin: 5px 0;"><strong>Teléfono:</strong> ${phone}</p>
+        <p style="margin: 5px 0;"><strong>Teléfono:</strong> ${phone || 'No proporcionado'}</p>
         <p style="margin: 5px 0 15px 0;"><strong>Mensaje:</strong></p>
-        <p style="margin: 0; color:#555;">${message}</p>
+        <p style="margin: 0; color:#555; white-space: pre-wrap;">${message}</p>
       </div>
 
       <div style="text-align:center; margin-top: 30px;">
-        <a href="https://hedra-spa.vercel.app" 
-        style="background:#2a4d45; color:#fff; padding: 12px 25px; text-decoration:none; border-radius: 6px; font-size: 16px;">
+        <a href="https://auren-spa.vercel.app" 
+        style="background:#2a4d45; color:#fff; padding: 12px 25px; text-decoration:none; border-radius: 6px; font-size: 16px; display: inline-block;">
           Visitar sitio web
         </a>
       </div>
@@ -151,11 +163,25 @@ await transporter.sendMail({
     </div>
   </div>
   `,
-});
+    });
 
-    res.status(200).json({ success: true });
+    console.log('Correo al cliente enviado:', emailToClient.messageId);
+
+    res.status(200).json({ 
+      success: true,
+      message: 'Correos enviados exitosamente',
+      messageIds: {
+        team: emailToTeam.messageId,
+        client: emailToClient.messageId
+      }
+    });
+
   } catch (error) {
     console.error("Error enviando correo:", error);
-    res.status(500).json({ error: "Error enviando correo" });
+    res.status(500).json({ 
+      success: false,
+      error: "Error enviando correo",
+      details: error.message 
+    });
   }
 }
