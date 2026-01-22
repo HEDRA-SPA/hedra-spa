@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PopupButton } from 'react-calendly';
 import video from '/video_hero.mp4';
@@ -7,6 +7,7 @@ const VIDEO_URL = video;
 
 const Hero = ({ imageUrl }) => {
   const { t, i18n } = useTranslation();
+  const [videoLoaded, setVideoLoaded] = useState(false);
   
   const heroStyle = {
     minHeight: '100vh', 
@@ -17,6 +18,7 @@ const Hero = ({ imageUrl }) => {
     color: 'white',
     textAlign: 'center',
     overflow: 'hidden',
+    backgroundColor: '#000', // Fondo negro mientras carga
   };
 
   const calendlyUrl = 'https://calendly.com/hedraspa/30min'
@@ -29,6 +31,7 @@ const Hero = ({ imageUrl }) => {
         loop
         muted
         playsInline
+        onLoadedData={() => setVideoLoaded(true)}
         style={{
           position: 'absolute', 
           top: '50%',
@@ -40,6 +43,8 @@ const Hero = ({ imageUrl }) => {
           zIndex: 0, 
           transform: 'translate(-50%, -50%)',
           objectFit: 'cover',
+          opacity: videoLoaded ? 1 : 0,
+          transition: 'opacity 1s ease-in-out',
         }}
       >
         <source src={VIDEO_URL} type="video/mp4" />

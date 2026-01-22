@@ -33,7 +33,7 @@ const AboutSection = () => {
         <div className="row align-items-center">
           
           <div 
-            className="col-md-6 d-flex justify-content-center mb-5 mb-md-0" 
+            className="col-md-6 d-flex justify-content-center align-items-center mb-5 mb-md-0" 
           >
             <div 
               style={{
@@ -41,16 +41,20 @@ const AboutSection = () => {
                 height: '350px',
                 borderRadius: '50%',
                 overflow: 'hidden',
-                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#ffffff', // opcional: por si quieres un fondo
               }}
             >
               <img
                 src={IMAGE_URL}
-                className="img-fluid"
+                alt="Hedra Logo"
                 style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover' 
+                    width: '80%', 
+                    height: '80%', 
+                    objectFit: 'contain',
+                    objectPosition: 'center'
                 }} 
               />
             </div>
