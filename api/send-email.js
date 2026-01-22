@@ -150,7 +150,7 @@ export default async function handler(req, res) {
       </div>
 
       <div style="text-align:center; margin-top: 30px;">
-        <a href="https://auren-spa.vercel.app" 
+        <a href="https://www.aurenspa.com" 
         style="background:#2a4d45; color:#fff; padding: 12px 25px; text-decoration:none; border-radius: 6px; font-size: 16px; display: inline-block;">
           Visitar sitio web
         </a>

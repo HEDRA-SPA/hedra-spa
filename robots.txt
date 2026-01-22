@@ -1,0 +1,12 @@
+
+User-agent: *
+Allow: /
+
+# Prefer the sitemap for crawlers
+Sitemap: https://www.aurenspa.com/sitemap.xml
+
+# If you need to block any staging or private folders, add Disallow rules below.
+# Example: Disallow: /private/
+
+# If you need to block any staging or private folders, add Disallow rules below.
+# Example: Disallow: /private/
