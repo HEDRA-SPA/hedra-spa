@@ -38,25 +38,25 @@
           {
             "title": "Masaje relajante",
             "duration": "60 min",
-            "price": "$1260 MXN",
+            "price": "$1400 MXN",
             "description": "Suaves maniobras relajantes que reducen el estrés, tensión y mejora la circulación sanguínea. Incluye aromaterapia y té."
           },
           {
             "title": "Masaje sueco",
             "duration": "60 min",
-            "price": "$1620 MXN",
+            "price": "$1500 MXN",
             "description": "Relajación muscular profunda, mediante manipulaciones descontracturantes. Incluye aromaterapia y té. Incluye aromaterapia y té."
           },
           {
             "title": "Masaje deportivo",
             "duration": "60 min",
-            "price": "$1350 MXN",
+            "price": "$1500 MXN",
             "description": "Masaje profundo e intenso, elimina la fatiga muscular causada por esfuerzo, mejora lesiones y relaja. Incluye aromaterapia y té."
           },
           {
             "title": "Piedras calientes",
             "duration": "60 min",
-            "price": "$1350 MXN",
+            "price": "$1500 MXN",
             "description": "El calor de las piedras relaja profundamente las zonas más fatigadas del cuerpo y contribuye al equilibrio energético gracias a las propiedades de la obsidiana. Incluye aromaterapia y té."
           }
         ]
