@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async'
 import '../styles/ServicesSection.css';
-import '../styles/ServiceDetail.css';
+import '../../styles/ServiceDetail.css';
 import Footer from '../Footer';
 import { PopupButton } from 'react-calendly';
 import WhatsAppButton from '../utils/WhatsAppButton';

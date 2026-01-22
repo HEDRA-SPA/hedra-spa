@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async'
 import '../App.css';
 import MainNavbar from '../components/MainBar';
 import FeatureCardGroup from '../components/FeatureCardGroup';
@@ -17,6 +18,15 @@ function MainPage() {
 
   return (
     <div>
+      <Helmet>
+        <title>Auren SPA — Centro de bienestar y relajación</title>
+        <meta name="description" content="Auren SPA — Masajes, terapias corporales y tratamientos faciales. Reserva ya y descubre bienestar integral." />
+        <link rel="canonical" href="https://www.aurenspa.com/" />
+        <meta property="og:title" content="Auren SPA — Centro de bienestar y relajación" />
+        <meta property="og:description" content="Masajes, terapias corporales y tratamientos faciales. Reserva una sesión en Auren SPA." />
+        <meta property="og:image" content={HERO_BACKGROUND_URL} />
+      </Helmet>
+
       <header>
         <MainNavbar 
           logoSrc="/spa-logo.png" 
