@@ -20,6 +20,17 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    detection: {
+      caches: ['localStorage', 'sessionStorage'],
+    }
   });
+
+// Normalizar el idioma detectado para usar solo el código base (e.g., 'es-ES' → 'es')
+i18n.on('languageChanged', (lng) => {
+  const baseLang = lng.split('-')[0];
+  if (baseLang !== lng && (baseLang === 'es' || baseLang === 'en')) {
+    i18n.changeLanguage(baseLang);
+  }
+});
 
 export default i18n;

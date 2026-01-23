@@ -115,7 +115,14 @@ function ServiceDetail() {
                 url={calendlyUrl}
                 rootElement={document.getElementById("root")}
                 text={t("navbar.reserve_a_now") || "Reserva"}
-                className="fw-bold px-5 py-3 custom-calendly-btn" 
+                className="fw-bold px-5 py-3 custom-calendly-btn"
+                pageSettings={{
+                  backgroundColor: 'ffffff',
+                  hideEventTypeDetails: false,
+                  hideLandingPageDetails: false,
+                  primaryColor: '2D621E',
+                  textColor: '4d5055'
+                }}
                 styles={{
                     borderRadius: "15px",
                     backgroundColor: "#2D621E", 
