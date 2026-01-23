@@ -4,6 +4,13 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslations from './locales/en.json';
 import esTranslations from './locales/es.json';
 
+// Función para normalizar idiomas a su forma base
+const normalizeLanguage = (lng) => {
+  if (!lng) return 'en';
+  const baseLang = lng.split('-')[0].split('_')[0].toLowerCase();
+  return ['es', 'en'].includes(baseLang) ? baseLang : 'en';
+};
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -21,16 +28,15 @@ i18n
       escapeValue: false,
     },
     detection: {
-      caches: ['localStorage', 'sessionStorage'],
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
     }
   });
 
-// Normalizar el idioma detectado para usar solo el código base (e.g., 'es-ES' → 'es')
-i18n.on('languageChanged', (lng) => {
-  const baseLang = lng.split('-')[0];
-  if (baseLang !== lng && (baseLang === 'es' || baseLang === 'en')) {
-    i18n.changeLanguage(baseLang);
-  }
-});
+// Normalizar el idioma detectado y almacenado
+const detectedLang = normalizeLanguage(i18n.language);
+if (detectedLang !== i18n.language) {
+  i18n.changeLanguage(detectedLang);
+}
 
 export default i18n;
