@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useNormalizedLanguage } from '../../hooks/useNormalizedLanguage';
 import { Helmet } from 'react-helmet-async'
 import '../styles/ServicesSection.css';
 import '../styles/ServiceDetail.css';
@@ -38,7 +38,7 @@ const calendlyUrl = 'https://calendly.com/hedraspa/30min'
 
 function ServiceDetail() {
   const { lang, slug } = useParams(); 
-  const { t } = useTranslation();
+  const { t } = useNormalizedLanguage();
   
   const serviceKey = getServiceKeyFromSlug(lang, slug);
   if (!serviceKey || !serviceImageMap[serviceKey]) {

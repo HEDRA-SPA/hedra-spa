@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useNormalizedLanguage } from '../hooks/useNormalizedLanguage';
 import './styles/ServicesSection.css';
 import MinimalistCarousel from './MinimalistCarousel';
 import photo_therapeutic from '/photo_therapeutic.jpg';
@@ -37,9 +37,8 @@ const servicesData = [
   },
 ];
 const ServicesSection = () => {
-  // CORRECCIÓN: Desestructuramos { t } e { i18n } correctamente
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language;
+  // CORRECCIÓN: Usamos el hook personalizado que garantiza idiomas normalizados
+  const { t, currentLang } = useNormalizedLanguage();
   
   // Obtenemos el segmento de ruta traducido
   const routeSegment = routeSegmentMap[currentLang] || 'servicio';
